@@ -1,0 +1,163 @@
+body{
+    font-family: "Open Sans";
+}
+h1,h2,h3,h4,h5{
+    font-family: "Lato";
+}
+.container {
+    padding: 40px 20px;
+}
+.background-lime{
+    background-color: lime;
+}
+.background-green {
+    background-color: darkcyan;
+}
+.background-grey{
+    background-color: #3a3a3a;
+}
+.background-white{
+    background-color: #fff;
+}
+.background-red{
+    background-color: red;
+}
+.background-yellow{
+    background-color: yellow;
+}
+.background-babyblue{
+    background-color: skyblue;
+}
+.background-paleblue{
+    background-color: lightblue;
+}
+.background-purple{
+    background-color: purple;
+}
+.background-black{
+    background-color: black;
+}
+.background-blue{
+    background-color: blue;
+}
+.container-spacy{
+    padding: 80px 20px;
+}
+header#main{
+    margin-bottom: 40px;
+}
+header#main .brand a{
+    display: block;
+    font-family: "Water Brush";
+    font-size: 2.5em;
+    color: navy;
+    margin-bottom: 20px;
+}
+nav#main ul{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    float: right;
+}
+nav#main ul li {
+    display: inline-block;
+    margin-right: 20px;
+}
+nav#main ul li:last-child{
+    margin-right: 0;
+}
+nav#main ul li a {
+    font-size: .78em;
+    /*text-transform: uppercase;*/
+    font-weight: 600;
+}
+nav#main ul li a:not(.button){
+    color: navy;
+    font-variant: small-caps;
+}
+.button{
+    padding: 15px 30px;
+    border-radius: 5px;
+}
+.button-primary{
+    background: #3a3a3a;
+}
+.button-primary:hover{
+    background: #3a3a3a;
+}
+.button-secondary:hover{
+    background: #fff;
+    color: #3a3a3a;
+}
+.button-secondary{
+    background: #fff;
+    color: #3a3a3a;
+}
+.feature{
+    margin-top: 20px;
+}
+.feature h1{
+    font-size: 5em;
+    font-style: "Open Sans";
+    color: #fff;
+    font-variant: small-caps;
+    font-weight: 900;
+    line-height: 75px;
+    margin-bottom: 40px;
+}
+.features{
+    text-align: center;
+}
+.features h5 {
+    font-weight: 700;
+    font-size: 1.5em;
+}
+.features p{
+    font-size: .85em;
+    margin-bottom: 40px;
+}
+.features img{
+    margin-bottom: 20px;
+}
+.recent{
+    text-align: center;
+}
+.recent h2{
+    color: #fff;
+    font-variant: small-caps;
+    letter-spacing: 3px;
+}
+.recent p {
+    margin-bottom:  60px;
+    color: #96eaba;
+}
+.recent .item{
+    padding: 100px 0;
+    margin: 10px;
+}
+.recent ul li a {
+    color: #fff;
+    border: 2px solid transparent;
+    padding: 8px 20px;
+    border-radius: 5px;
+    font-weight: 600;
+}
+.recent ul li a:hover{
+    border: 2px solid #fff;
+}
+.recent ul li.selected a {
+    background: #fff;
+    color: #27ae60;
+}
+.recent .show-more{
+    margin-top: 20px;
+    font-weight: 600;
+}
+.inline-list{
+    list-style-type: none;
+}
+.inline-list li{
+    display: inline-block;
+    margin: 0 20px;
+    margin-bottom: 20px;
+}
