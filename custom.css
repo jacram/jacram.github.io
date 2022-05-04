@@ -97,13 +97,13 @@ nav#main ul li a:not(.button){
     margin-top: 20px;
 }
 .feature h1{
-    font-size: 5em;
+    font-size: 3em;
     font-style: "Open Sans";
     color: #fff;
     font-variant: small-caps;
     font-weight: 900;
     line-height: 75px;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
 }
 .features{
     text-align: center;
