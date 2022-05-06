@@ -14,7 +14,8 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background: url(american-flag.jpg);
+    background: transparent;
+    background: url(img/usaf.png);
     background-size: cover;
 }
 .contact .content{
@@ -22,13 +23,19 @@
     text-align: center;
 }
 .contact .content h2{
-    font-size: 36px;
-    font-weight: 500;
-    color: palegoldenrod;
+    font-size: 3em;
+    font-style: "Open Sans";
+    color: lightcyan;
+    font-variant: small-caps;
+    font-weight: 800;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
 }
 .contact .content p{
-    font-weight: 300;
-    color: palegoldenrod;
+    font-weight: 500;
+    color: black;
+    font-size: 1.25em;
+    font-variant: small-caps;
 }
 .container{
     width: 100%;
@@ -53,7 +60,7 @@
 .container .contactInfo .box .icon{
     min-width: 60px;
     height: 60px;
-    background-color: palegoldenrod;
+    background-color: lightcyan;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -65,25 +72,30 @@
     font-variant: small-caps;
     margin-left: 20px;
     font-size: 1.5em;
-    color: palegoldenrod;
+    color: lightcyan;
     flex-direction: column;
     font-weight: 600;
+    -webkit-text-stroke-width: 0.5px;
+    -webkit-text-stroke-color: black;
 }
 .container .contactInfo .box .text h3{
     font-weight: 800;
     color: green;
-    font-size: 1.25;
+    font-size: 1.5;
 }
 .contactForm{
     width: 35%;
     padding: 30px;
-    background: palegoldenrod;
+    background: lightcyan;
+    border-radius: 5%;
 }
 .contactForm h2{
     font-size: 3em;
     font-weight: 600;
     color: green;
     font-variant: small-caps;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
 }
 .contactForm .inputBox{
     position: relative;
@@ -141,12 +153,15 @@ textarea{
 }
 .contactForm .inputBox input[type="submit"]{
     width: 100%;
-    background: #00bcd4;
+    background: lightgrey;
     color: #fff;
     border: none;
     cursor: pointer;
     padding: 10px;
-    font-size: 15px;
+    font-size: 1.2em;
+    font-weight: 800;
+    -webkit-text-stroke-width: .25px;
+    -webkit-text-stroke-color: black;
 }
 @media (max-width:990px){
     .contact{
