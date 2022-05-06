@@ -15,7 +15,7 @@
     align-items: center;
     flex-direction: column;
     background: transparent;
-    background: linear-gradient(45deg,rgba(240,240,255,.7),rgba(240,240,255,.7)),url('img/usaf.png');
+    background: linear-gradient(45deg,rgba(240,240,255,.7),rgba(240,240,255,.7)),url('american-flag.jpg');
     background-size: cover;
 }
 .contact .content{
