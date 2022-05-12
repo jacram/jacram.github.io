@@ -252,7 +252,112 @@ header{
     padding: 0px;
     text-decoration: none;
 }
-
-
-
-
+.about{
+    padding: 4.5rem 0;
+}
+.about-text{
+    margin: 2rem 0;
+}
+.about-text > p{
+    font-size: 1.1rem;
+    padding: .6rem 0;
+    opacity: .8;
+}
+footer{
+    background: var(--dark);
+    color: #fff;
+    text-align: center;
+    padding: 2rem 0;
+}
+.social-links{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.3rem;
+}
+.social-links a{
+    border: 2px solid #fff;
+    color: #fff;
+    display: block;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    text-decoration: none;
+    margin: 0 .3rem;
+    transition: all .5s ease;
+}
+.social-links a:hover{
+    background: #fff;
+    color: var(--dark);
+}
+footer span{
+    margin-top: 1rem;
+    display: block;
+    font-family: var(--Playfair);
+    letter-spacing: 2px;
+}
+@media screen and(min-width: 540px){
+    .navbar a{
+        padding-right: 1.2rem;
+        padding-left: 1.2rem;
+    }
+    .banner-title{
+        font-size: 5rem;
+    }
+    .banner form{
+        margin-top: 1.4rem;
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+@media screen and (min-width: 768px){
+    .navbar .container{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .navbar-brand{
+        text-align: center;
+    }
+    .search-input{
+        padding: .8rem 0;
+    }
+    /*.design-content{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+    .design-item{
+        margin: 0;
+    }
+    .blog-content{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }*/
+}
+@media screen and (min-width: 992px){
+    /*.blog-content{
+        grid-template-columns: repeat(3, 1fr);
+    }*/
+    .navbar-brand{
+        text-align: center;
+    }
+    .about-content{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 3rem;
+        align-items: center;
+    }
+}
+@media screen and (min-width: 1200px){
+    .navbar-brand{
+        text-align: center;
+    }
+   /* .design-content{
+        grid-template-columns: repeat(3, 1fr);
+    }*/
+}
