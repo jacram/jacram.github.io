@@ -244,7 +244,14 @@ header{
 .blog-text a:hover{
     background: var(--exdark);
 }
-
+.brand{
+    font-family: "Water Brush";
+    font-size: 1.2em;
+    color: navy;
+    margin: 0px;
+    padding: 0px;
+    text-decoration: none;
+}
 
 
 
