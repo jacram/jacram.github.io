@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="Author" content="James Matthews">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Water+Brush&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font/awesome/5.15.1/css/all.min.css" integrity="sha512-+4zK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/fontawesome.min.css" integrity="sha512-xX2rYBFJSj86W54Fyv1de80DWBq7zYLn2z0I9bIhQG+rxIF6XVJUpdGnsNHWRa6AvP89vtFupEPDP8eZAtu9qA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.css" integrity="sha512-1hsteeq9xTM5CX6NsXiJu3Y/g+tj+IIwtZMtTisemEv3hx+S9ngaW4nryrNcPM4xGzINcKbwUJtojslX2KG+DQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="signup.css">
+    <title>Sign Up page</title>
+</head>
+<body>
+    <nav class="navbar">
+        <a class="brand" href="index.html">James C. Matthews</a>
+        <div class="container">           
+            <div class="navbar-nav">
+                <a href="#">Home</a>
+                <a href="#">Portfolio</a>
+                <a href="#">Services</a>
+                <a href="#">About</a>
+            </div>
+        </div>
+    </nav>
+    <div class="split-screen">
+        <div class="left">
+            <section class="copy">
+                <h1>Explore your creative side</h1>
+                <p>Still in the makings</p>
+            </section>
+        </div>
+        <div class="right">
+            <form action="#">
+                <section class="copy">
+                    <h2>Sign Up</h2>
+                    <div class="login-container">
+                        <p>Already have an account? <a href="#"><strong> Log In</strong></a></p>
+                    </div>
+                </section>
+                <div class="input-container">
+                    <label for="fname">Full Name</label>
+                    <input id="fname" name="fname" type="text">
+                </div>
+                <div class="input-container">
+                    <label for="email">Email</label>
+                    <input id="email" name="email" type="email">
+                </div>
+                <div class="input-container">
+                    <label for="password">Password</label>
+                    <input id="password" name="password" placeholder="Must be at least 6 characters" type="password">
+                    <!--<i class="far fa-eye-slash"></i>-->
+                </div>
+                <div class="input-container cta">
+                    <label class="checkbox-container" for="">
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                        Sign up for email updates.
+                    </label>
+                </div>
+                <button class="signup-btn" type="submit">Sign Up</button>
+                <section class="copy legal">
+                    <p><span class="small">By cotinuing, you agree to accept our Privacy Terms &<br><a href="#">Terms of service</a>.</span></p>
+                </section>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
