@@ -8,7 +8,7 @@ h1,h2,h3,h4,h5{
     padding: 40px 20px;
 }
 .background-usa{
-    background: linear-gradient(rgba(255,255,255,0.8),rgba(255,255,255,0.8)),url(american-flag.jpg) center/cover no-repeat fixed;
+    background: linear-gradient(rgba(255,255,255,0.8),rgba(255,255,255,0.8)),url('american-flag.jpg') center/cover no-repeat fixed;
 }
 .background-green {
     background-color: darkcyan;
