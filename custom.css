@@ -63,6 +63,11 @@ nav#main ul li {
     display: inline-block;
     margin-right: 20px;
 }
+#main ul li a:hover{
+    padding: 10px;
+    border: 3px solid black;
+    border-radius: 7px;
+}
 nav#main ul li:last-child{
     margin-right: 0;
 }
