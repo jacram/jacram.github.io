@@ -9,7 +9,7 @@
     <H1>Arcade Tennis Game</H1>
 </head>
 <body>
-    <canvas id="gameCanvas" width="1000px" height="600px"></canvas>
+    <canvas id="gameCanvas" width="1200px" height="600px"></canvas>
     <script>
         var canvas
         var canvasContext
@@ -133,9 +133,9 @@
             }
             drawNet();
             //left paddle
-            colorRect(5,paddleY,PADDLE_THICKNESS,PADDLE_HEIGHT,'green');
+            colorRect(2,paddleY,PADDLE_THICKNESS,PADDLE_HEIGHT,'green');
             //right paddle
-            colorRect(canvas.width-PADDLE_THICKNESS-5,paddle2Y,PADDLE_THICKNESS,PADDLE_HEIGHT,'white');
+            colorRect(canvas.width-PADDLE_THICKNESS-2,paddle2Y,PADDLE_THICKNESS,PADDLE_HEIGHT,'white');
             //draws ball
             colorCircle(ballX, ballY, 10, 'white');
             canvasContext.fillText(player1Score, 100, 100);
