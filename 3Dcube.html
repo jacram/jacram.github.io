@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="author" content="James Matthews">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>3D Cube</title>
+        <link rel="stylesheet" href="cube.css">
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            body{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                min-height: 100vh;
+                background: linear-gradient(rgba(105,105,105,0.7),rgba(5,5,5,0.1)),url('mybg.png') center/cover no-repeat fixed;
+            }
+            .cube{
+                position: relative;
+                width: 300px;
+                height: 300px;
+                transform-style: preserve-3d;
+                transform: rotateX(-10deg);
+                animation: cubix 40s linear infinite;
+            }
+            .cube div{
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                transform-style: preserve-3d;
+            }
+            .cube div span{
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(#111,rgb(0,253,0));
+                transform: rotateY(calc(90deg * var(--i))) translateZ(150px);
+            }
+            @keyframes cubix {
+                0%{
+                    transform: rotateX(-10deg)rotateY(0deg);
+                }
+                100%{
+                    transform: rotateX(-10deg)rotateY(360deg);
+                }
+            }
+            .top{
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: #111;
+                transform: rotateX(90deg) translateZ(150px);
+            }
+            .top::before{
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgb(0,253,0);
+                transform: rotateX(180deg) translateZ(380px);
+                filter: blur(25px);
+                box-shadow: 0 0 120px rgba(0, 253, 0, .16), 0 0 200 rgba(0, 253, 0, .23), 0 0 400 rgba(0, 253, 0, .45), 0 0 800 rgb(0, 253, 0), 0 0 1000 rgb(0, 253, 0),;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="cube">
+            <div class="top"></div>
+            <div>
+                <span style="--i:0;"><img src="Earle_Logo.png" alt=""></span>
+                <span style="--i:1;"><img src="Earle_Logo.png" alt=""></span>
+                <span style="--i:2;"><img src="Earle_Logo.png" alt=""></span>
+                <span style="--i:3;"><img src="Earle_Logo.png" alt=""></span>
+            </div>
+        </div>
+    </body>
+</html>
