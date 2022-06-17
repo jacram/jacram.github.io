@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="Author" content="James Matthews">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chart</title>
+    <style>
+        *{
+            font-variant: small-caps;
+        }
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }  
+        .header{
+            display: flex;
+            top: 0;
+            margin: 0;
+            padding: 0;
+            position: absolute;
+            justify-content: center;
+            align-items: center;
+            color: #0af;
+            font-size: 2em;
+            font-variant: small-caps;
+        }
+        .chart{
+            position: relative;
+            width: 60vw;
+            height: 50vh;
+            margin: 0;
+            padding: 0;
+        }  
+        .js{
+            font-variant: small-caps;
+        }   
+    </style>
+</head>
+<body>
+    <div class="header">
+    <h1>Line Chart</h1>
+    </div>
+    <div class="chart">
+        <canvas id="myChart"></canvas>
+    </div>
+    <div class="js">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.min.js" 
+    integrity="sha512-Wt1bJGtlnMtGP0dqNFH1xlkLBNpEodaiQ8ZN5JLA5wpc1sUlk/O5uuOMNgvzddzkpvZ9GLyYNa8w2s7rqiTk5Q==" 
+    crossorigin="anonymous" 
+    referrerpolicy="no-referrer">
+    </script>
+    <script>
+        const ctx = document.getElementById('myChart').getContext("2d");
+
+        let delayed;
+
+        //gradient fill
+        let gradient = ctx.createLinearGradient(50, 50, 50, 400);
+        gradient.addColorStop(0, "rgba(58,123,213, .9)");
+        gradient.addColorStop(1, "rgba(58,123,213, .1)");
+
+const labels = ["6/1","6/2","6/3","6/6","6/7","6/8","6/9","6/10","6/13","6/14","6/15",];
+
+const data = {
+    labels, 
+    datasets: [
+        {
+            data:[2757, 3508, 1494, 4733, 1783, 2384, 1286, 8607, 1923, 8531, 4249],
+            label: "Daily Web Page Hits",
+            fill: true,
+            backgroundColor: gradient,
+            borderColor: "#0fe",
+            pointBackgroundColor: "#f00",
+            tension: .5,
+        },
+    ],
+};
+
+const config = {
+    type: "line",
+    data: data,
+    options: {
+        radius: 5,
+        hitRadius: 30,
+        hoverRadius: 8,
+        responsive: true,
+        animation:{
+            onComplete: () => {
+                delayed = true;
+            },
+            delay: (context) => {
+               let delay = 0;
+               if (context.type === "data" && context.mode === "default" && !delayed){
+                delay = context.dataIndex * 300 + context.datasetIndex * 100;
+               }
+               return delay;
+            },       
+        },
+        scales: {
+            y:{
+                ticks:{
+                    callback: function(value){
+                        return "" + value + "";
+                    }
+                }
+            }
+        }
+    },
+};
+
+const myChart = new Chart(ctx, config);
+
+    </script>
+    </div>
+</body>
+</html>
