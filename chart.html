@@ -10,19 +10,39 @@
             margin: 0;
             padding: 0;
         }
-       .container{
-        display: contents;
-        align-items: baseline;
-        justify-content: baseline;
+       iframe{
+        /*display:flex;*/
+        width: 720px;
+        height: 500px;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+       }
+       #c1{
+        background: linear-gradient(rgba(240,240,240,0.9),rgba(220,220,220,0.8)),url('mybg.png') center/cover no-repeat fixed;
+       }
+       #c2{
+        background: linear-gradient(rgba(240,240,240,0.9),rgba(220,220,220,0.8)),url('mybg.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+       }
+       @media screen and(min-width: 600px){
+        iframe{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0;
+            margin-right: 0;
+        }
        }
     </style>
 </head>
 <body>
     <div class="container">
         
-        <iframe src="chart1.html" width="50%" height="600px" frameborder="0"></iframe>
+        <iframe id="c1" src="chart1.html" frameborder="0"></iframe>
         
-        <iframe src="chart2.html" width="48%" height="600px" frameborder="0"></iframe>
+        <iframe id="c2" src="chart2.html" frameborder="0"></iframe>
         
     </div>
 </body>
