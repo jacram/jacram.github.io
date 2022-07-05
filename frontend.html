@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,700&family=Montserrat&display=swap" rel="stylesheet">
+  <title>Frontend Mentor | Product preview card component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    body{
+        background-color: rgba(200, 150, 150, .2);
+    }
+    .container{
+        margin-top: 100px;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        padding: 30px;
+    }
+    .product{
+        display: flex;
+        border-radius: 1em;
+        width: 600px;
+        height: 450px;
+        /*background: #ccc;*/
+    }
+    .img{
+        width: 100%;        
+        background: url(img/image-product-desktop.jpg);
+        background-size: cover;
+        border-radius: 1em 0 0 1em;
+    }
+    .text{
+        width: 100%;
+        background-color: #fff;
+        border-radius: 0 1em 1em 0;
+    }
+    h3{
+        color: rgba(30, 75, 50, .7);
+        margin: 30px 20px 17px 25px;
+        font-size: 1.1em;
+        font-weight: 700;
+        letter-spacing: .4em;
+        font-variant: small-caps;
+        font-family: 'Montserrat', sans-serif;
+    }
+    span{
+        padding-right: 40px;
+    }
+    h1{
+        font-family: 'Fraunces', serif;
+        margin-left: 20px;
+        line-height: 33px;
+        padding: 0;
+    }
+    p{
+        color: rgba(30, 75, 50, .7);
+        font-weight: 500;
+        font-size: .9em;
+        margin: 22px 30px 23px 22px;
+        line-height: 23px;
+        font-family: 'Montserrat', sans-serif;
+    }
+    h2{
+        font-size: 2em;
+        color: rgba(30, 75, 50, .7);
+        font-family: 'Fraunces', serif;
+        margin: 20px 20px 25px 20px;
+    }
+    .sale{
+        margin-left: 20px;
+        font-size: 15px;
+        text-decoration: line-through;
+    }
+    button{
+        border-radius: 10px;
+        border: none;
+        width: 250px;
+        margin-left: 25px;
+        padding: 12px;
+        background: rgba(30, 75, 50, .7);
+        color: #fff;
+        font-weight: 700;
+        font-size: 1.2em;
+    }
+    button:hover{
+        cursor: pointer;
+    }
+    .cart{
+        width: 20px;
+        margin-right: 20px;
+    }
+    .attribution { 
+        font-size: 11px; text-align: center; 
+    }
+    .attribution a {
+        color: hsl(228, 45%, 44%); 
+    }
+    @media (max-width: 650px){
+        .container{
+            width: 100vw;
+            margin: 0px;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            padding: 0px;
+        }
+        .product{
+            display: grid;
+            justify-content: center;
+            align-items: center;                    
+            border-radius: 0 1em 1em 0;
+            margin-top: 20px;
+            padding: 0;
+        }
+        .img{
+            width: 95vw; 
+            height: 40vh;
+            margin: 0px 0px 0px 0px;       
+            background: url(img/image-product-mobile.jpg);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            border-radius: .5em .5em 0 0;
+        }
+        .text{
+            width: 95vw;
+            height: 55vh;
+            margin: 0px 0 0 0px;
+            background-color: #fff;
+            border-radius: 0 0 .5em .5em;
+        }
+        h3{
+            color: rgba(30, 75, 50, .7);
+            margin: 20px 0px 15px 20px;
+            padding-top: 0px;
+            font-size: 1em;
+            font-weight: 700;
+            letter-spacing: .35em;
+            font-variant: small-caps;
+            font-family: 'Montserrat', sans-serif;
+        }
+        span{
+            padding-right: 0px;
+        }
+        h1{
+            font-size: 2.1em;
+            margin-left: 15px;
+            line-height: 35px;
+            padding: 0;
+        }
+        p{
+            color: rgba(30, 75, 50, .7);
+            font-weight: 500;
+            font-size: .85em;
+            margin: 10px 35px 0px 15px;
+            line-height: 23px;
+            font-family: 'Montserrat', sans-serif;
+        }
+        h2{
+            font-size: 2.2em;
+            color: rgba(30, 75, 50, .7);
+            font-family: 'Fraunces', serif;
+            margin: 50px 0px 15px 15px;
+        }
+        .sale{
+            padding: 12px;
+            position: absolute;
+            margin: 0px 0px 0px 20px;
+            font-size: 14px;
+            text-decoration: line-through;
+        }
+        button{
+            border-radius: 8px;
+            border: none;
+            width: 90%;
+            margin: 0px 0px 20px 0px;
+            padding: 15px;
+            background: rgba(30, 75, 50, .7);
+            color: #fff;
+            font-weight: 600;
+            font-size: 1em;
+        }
+        button:hover{
+            cursor: pointer;
+        }
+        .cart{
+            position: absolute;
+            left: 120px;
+            height: 15px;
+            width: 15px;
+            padding: 2px 0px 0px 0px;
+            margin-right: 30px;
+        }
+        .btn{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .attribution {            
+            font-size: 8px; 
+            position: absolute;
+            top: 98%;
+            left: 40%;
+            transform: translate(-80px);
+        }
+        .attribution a { 
+            color: hsl(228, 45%, 44%); 
+        }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+        <div class="product">
+            <div class="img">
+                <section></section>
+            </div>
+            <div class="text">
+                <h3>perfume</h3>
+                <h1><span>Gabrielle</span> Essence Eau De Parfum</h1>
+                <p>A floral, solar and voluptuous interpretation composed by Olivier Polge, 
+                    Perfumer-Creator for the House of CHANEL.
+                </p>
+                <h2>$149.99 <span class="sale">$169.99</span></h2>
+                <div class="btn">
+                <button><img class="cart" src="img/icon-cart.svg">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">James Matthews</a>.
+  </div>
+</body>
+</html>
