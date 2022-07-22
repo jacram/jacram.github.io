@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frontend Challenges</title>
+    <style>
+        *{
+            margin: 1px;
+            padding: 0;
+            background-color: black;
+            color: #fff;
+        }
+        .container{
+            background-image: url(./mybg.png);
+            background-size: cover;
+            height: 98vh;
+            width: 99%;
+        }
+        .header{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        h2{
+            font-size: 2.5em;
+            padding: 20px;
+            line-height: 45px;
+        }
+        p{
+            line-height: 20px;
+            padding: 10px;
+        }
+        .content{
+            background: transparent;
+            width: 1000px;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        ul{
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            width: 100%;
+            background: transparent;
+        }
+        li{            
+            height: 250px;
+            width: 400px;
+            padding: 30px;
+            margin: 15px 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            border-radius: 20px;
+            box-shadow: 0 15px 30px rgba(250, 250, 255, .5);
+            transition: .5s;
+            background: linear-gradient(45deg, rgba(200, 200, 250, .1), rgba(200, 200, 250, .3));
+        }
+        li a{
+            background: transparent;
+            text-decoration: none;
+            text-align: center;
+            margin-bottom: 5px;
+        }
+        img{
+            width: 400px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h2>My Completed Designs</h2>
+            <p>These Are My Designs For The Challenges in Frontend Mentor</p>
+        </div>
+        <div class="content">    
+            <ul class="inline-list">
+                <li><a href="frontend.html"> First Challenge<img src="./img/frontend1.png" alt=""></a></li>
+                <li><a href="qr.html"> Second Challenge<img src="./img/frontend2.png" alt=""></a></li>
+                <li><a href="ntf-preview-card.html"> Third Challenge<img src="./img/frontend3.png" alt=""></a></li>
+                <li><a href=""></a></li>
+                <li><a href=""></a></li>
+                <li><a href=""></a></li>
+                <li><a href=""></a></li>
+                <li><a href=""></a></li>
+                <li><a href=""></a></li>
+            </ul>
+        </div>      
+    </div>
+</body>
+</html>
