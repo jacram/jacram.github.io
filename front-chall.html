@@ -4,17 +4,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
     <title>Frontend Challenges</title>
     <style>
         *{
             margin: 1px;
             padding: 0;
-            background-color: black;
+            background: linear-gradient(rgba(5,25,55,0.8),rgba(5,25,55,0.8)),url('./mybg.png') center/cover no-repeat fixed;
             color: #fff;
+            font-family: 'Cinzel', serif;
         }
         .container{
-            background-image: url(./mybg.png);
-            background-size: cover;
+            background: transparent;
             height: 98vh;
             width: 99%;
         }
@@ -23,15 +24,21 @@
             justify-content: center;
             align-items: center;
             flex-direction: column;
+            text-align: center;
+            
         }
         h2{
-            font-size: 2.5em;
+            font-size: 3.5em;
+            font-weight: 700;
             padding: 20px;
             line-height: 45px;
+            color: #cfe;
         }
         p{
             line-height: 20px;
             padding: 10px;
+            color: #cfc;
+            font-weight: 100;
         }
         .content{
             background: transparent;
@@ -62,6 +69,11 @@
             transition: .5s;
             background: linear-gradient(45deg, rgba(200, 200, 250, .1), rgba(200, 200, 250, .3));
         }
+        a h3{
+            line-height: 40px;
+            margin-bottom: 5px;
+            border-radius: 10px 10px 0px 0px;
+        }
         li a{
             background: transparent;
             text-decoration: none;
@@ -76,14 +88,14 @@
 <body>
     <div class="container">
         <div class="header">
-            <h2>My Completed Designs</h2>
+            <h2>My Completed Challenges</h2>
             <p>These Are My Designs For The Challenges in Frontend Mentor</p>
         </div>
         <div class="content">    
             <ul class="inline-list">
-                <li><a href="frontend.html"> First Challenge<img src="./img/frontend1.png" alt=""></a></li>
-                <li><a href="qr.html"> Second Challenge<img src="./img/frontend2.png" alt=""></a></li>
-                <li><a href="ntf-preview-card.html"> Third Challenge<img src="./img/frontend3.png" alt=""></a></li>
+                <li><a href="frontend.html"><h3> First Challenge</h3><img src="./img/frontend1.png" alt=""></a></li>
+                <li><a href="qr.html"><h3> Second Challenge</h3><img src="./img/frontend2.png" alt=""></a></li>
+                <li><a href="ntf-preview-card.html"><h3> Third Challenge</h3><img src="./img/frontend3.png" alt=""></a></li>
                 <li><a href=""></a></li>
                 <li><a href=""></a></li>
                 <li><a href=""></a></li>

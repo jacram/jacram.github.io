@@ -14,15 +14,14 @@
         margin: 0;
         padding: 0;
     }
-    body{
-        background-color: rgba(200, 150, 150, .2);
-    }
     .container{
-        margin-top: 100px;
+        background-color: rgba(200, 150, 150, .2);
+        height: 98vh;
+        margin: 0;
+        padding: 0;
         display: flex;
         justify-content: center;
-        align-content: center;
-        padding: 30px;
+        align-items: center;
     }
     .product{
         display: flex;
@@ -103,15 +102,7 @@
     .attribution a {
         color: hsl(228, 45%, 44%); 
     }
-    @media (max-width: 650px){
-        .container{
-            width: 100vw;
-            margin: 0px;
-            display: flex;
-            justify-content: center;
-            align-content: center;
-            padding: 0px;
-        }
+    @media (max-width: 580px){
         .product{
             display: grid;
             justify-content: center;
@@ -121,9 +112,11 @@
             padding: 0;
         }
         .img{
-            width: 95vw; 
-            height: 40vh;
-            margin: 0px 0px 0px 0px;       
+            position: absolute;
+            top: 25px;
+            width: 95%; 
+            height: 300px;
+            margin: 0px 0px 0px 10px;       
             background: url(img/image-product-mobile.jpg);
             background-size: cover;
             background-position: center;
@@ -131,15 +124,18 @@
             border-radius: .5em .5em 0 0;
         }
         .text{
+            position: absolute;
+            left: 10px;
+            bottom: 55px;
             width: 95vw;
-            height: 55vh;
+            height: 48vh;
             margin: 0px 0 0 0px;
             background-color: #fff;
             border-radius: 0 0 .5em .5em;
         }
         h3{
             color: rgba(30, 75, 50, .7);
-            margin: 20px 0px 15px 20px;
+            margin: 10px 0px 15px 20px;
             padding-top: 0px;
             font-size: 1em;
             font-weight: 700;
@@ -160,7 +156,7 @@
             color: rgba(30, 75, 50, .7);
             font-weight: 500;
             font-size: .85em;
-            margin: 10px 35px 0px 15px;
+            margin: 10px 15px 0px 15px;
             line-height: 23px;
             font-family: 'Montserrat', sans-serif;
         }
@@ -168,10 +164,10 @@
             font-size: 2.2em;
             color: rgba(30, 75, 50, .7);
             font-family: 'Fraunces', serif;
-            margin: 50px 0px 15px 15px;
+            margin: 40px 0px 25px 15px;
         }
         .sale{
-            padding: 12px;
+            padding: 15px;
             position: absolute;
             margin: 0px 0px 0px 20px;
             font-size: 14px;
@@ -182,7 +178,7 @@
             border: none;
             width: 90%;
             margin: 0px 0px 20px 0px;
-            padding: 15px;
+            padding: 10px;
             background: rgba(30, 75, 50, .7);
             color: #fff;
             font-weight: 600;
@@ -193,7 +189,7 @@
         }
         .cart{
             position: absolute;
-            left: 120px;
+            left: 100px;
             height: 15px;
             width: 15px;
             padding: 2px 0px 0px 0px;
@@ -204,16 +200,6 @@
             display: flex;
             justify-content: center;
             align-items: center;
-        }
-        .attribution {            
-            font-size: 8px; 
-            position: absolute;
-            top: 98%;
-            left: 40%;
-            transform: translate(-80px);
-        }
-        .attribution a { 
-            color: hsl(228, 45%, 44%); 
         }
     }
   </style>
@@ -239,7 +225,7 @@
     </div>
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">James Matthews</a>.
+    Coded by <a href="https://jacram.github.io/">James Matthews</a>.
   </div>
 </body>
 </html>
