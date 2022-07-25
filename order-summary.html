@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">  
+  <title>Frontend Mentor | Order summary card</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    *{
+        margin: 0;
+        padding: 0;
+        font-family: 'Red Hat Display', sans-serif;        
+    }
+    .bg{
+        height: 500px;
+        position: absolute;
+        top: -150px;
+        left: 0;
+        right: 0;
+        background: url(./img/pattern-background-desktop.svg) no-repeat center/cover;
+    }
+    .container{
+        margin: 0;
+        padding: 0;
+        height: 98vh;
+        background:  hsl(225, 100%, 94%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .context{
+        position: absolute;
+        width: 350px;
+        background: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        flex-direction: column;
+        border-radius: 20px;
+    }
+    div .image{
+        width: 100%;
+        height: 175px;
+        background: url(./img/illustration-hero.svg)  no-repeat center/cover;
+        border-radius: 20px 20px 0px 0px; 
+    }
+    h1{
+        font-size: 1.4em;
+        margin-top: 35px;
+        font-weight: 900;
+    }
+    p{
+        color: rgba(20, 20, 55, .6);
+        font-size: .85em;
+        margin: 15px 35px 15px 35px;
+        font-weight: 500;
+        line-height: 20px;
+    }
+    .annual-plan{
+        background: rgba(225, 225, 255, .2);
+        width: 85%;
+        height: 80px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        border-radius: 10px;
+        margin: 0px 20px 25px 25px;
+    }
+    .music-note{
+        position: absolute;
+        left: 10%;
+    }
+    h2{
+        position: absolute;
+        left: 25%;
+        font-size: .85em;
+        font-weight: 900;
+        line-height: 20px;
+    }
+    span{
+        font-size: 1em;
+        font-weight: 500;
+        padding: 10px;
+        color: rgba(20, 20, 55, .6);
+    }
+    .annual-plan a{
+        position: absolute;
+        left: 50%;
+        font-size: .8em;
+        font-weight: 700;
+        cursor: pointer;
+        margin-left: 80px;
+        color: hsl(245, 75%, 52%);
+    }
+    .annual-plan a:hover{
+        text-decoration: none;
+        color: hsl(245, 75%, 52%, .7);
+    }
+    button{
+        width: 85%;
+        background: hsl(245, 75%, 52%);
+        color: #fff;
+        padding: 11px;
+        border-radius: 10px;
+        border: none;
+        margin-bottom: 25px;
+        cursor: pointer;
+        box-shadow: 0px 15px 30px rgba(0, 0, 100, 0.2);
+    }
+    button:hover{
+        background: hsl(245, 75%, 52%, .7);
+    }
+    .cancel{
+        margin-bottom: 38px;
+    }
+    h4{
+        font-size: .8em;
+        cursor: pointer;
+        color: hsl(245, 75%, 52%, .7);
+    }
+    h4:hover{        
+        font-weight: 900; 
+        color: hsl(223, 47%, 23%);       
+    }
+    @media(max-width: 385px){
+        .bg{
+            top: -250px;
+            background: url(./img/pattern-background-mobile.svg) no-repeat center/cover;
+        }
+        .context{
+            width: 320px;
+        }
+    }
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>        
+    <div class="container">
+        <div class="bg"></div>
+        <div class="context">
+            <div class="image"></div>
+            <div class="text">    
+                <h1>Order Summary</h1>
+                <p>
+                    You can now listen to millions of songs, audiobooks, and podcasts on any device anywhere you like!
+                </p>
+                <div class="annual-plan">
+                    <svg class="music-note" xmlns="http://www.w3.org/2000/svg" width="48" height="48"><g fill="none" fill-rule="evenodd"><circle cx="24" cy="24" r="24" fill="#DFE6FB"/><path fill="#717FA6" fill-rule="nonzero" d="M32.574 15.198a.81.81 0 00-.646-.19L20.581 16.63a.81.81 0 00-.696.803V26.934a3.232 3.232 0 00-1.632-.44A3.257 3.257 0 0015 29.747 3.257 3.257 0 0018.253 33a3.257 3.257 0 003.253-3.253v-8.37l9.726-1.39v5.327a3.232 3.232 0 00-1.631-.441 3.257 3.257 0 00-3.254 3.253 3.257 3.257 0 003.254 3.253 3.257 3.257 0 003.253-3.253V15.81a.81.81 0 00-.28-.613z"/></g></svg>
+                    <h2>Annual Plan <br><span>$59.99/year</span></h2>        
+                    <a href="#">Change</a>
+                </div>
+                <div class="btn">
+                   <button>Proceed to Payment</button>
+                </div>
+                <div class="cancel">
+                   <h4>Cancel Order</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="attribution">
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+        Coded by <a href="https://jacram.github.io/">James Matthews</a>.
+    </div>
+</body>
+</html>
