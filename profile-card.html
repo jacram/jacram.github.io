@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Profile card component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+      font-family: 'Kumbh Sans', sans-serif;
+      font-weight: 400;
+      font-size: 18px;
+    }
+    :root{
+      --Dark-cyan: hsl(185, 75%, 39%);
+      --Very-dark-desaturated-blue: hsl(229, 23%, 23%);
+      --Dark-grayish-blue: hsl(227, 10%, 46%);
+      --Dark-gray: hsl(0, 0%, 59%);
+    }
+    .container{
+      margin: 0;
+      padding: 0;
+      height: 98vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: var(--Dark-cyan);
+      overflow: hidden;
+      position: relative;
+    }
+    .bg-pattern-top{
+      width: 900px;
+      height: 900px;
+      position: absolute;
+      top: -75%;
+      left: -15%;
+      background: url(./img/bg-pattern-top.svg) center/cover no-repeat;
+      transition: 1s;
+    }
+    .bg-pattern-bottom{
+      position: absolute;
+      width: 900px;
+      height: 900px;
+      right: -15%;
+      bottom: -75%;
+      background-size: 100%;
+      background: url(./img/bg-pattern-bottom.svg) center/cover no-repeat;
+      transition: 1s;
+    }
+    .content{
+      background: #fff;
+      position: relative;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      border-radius: 20px;
+      height: 500px;
+    }
+    .header-bg{
+      background: url(./img/bg-pattern-card.svg);
+      width: 450px;
+      height: 150px;
+      border-radius: 20px 20px 0 0;
+      transition: 1s;
+    }
+    .img img{
+      border-radius: 50%;
+      border: 4px solid #fff;
+      position: relative;
+      top: -50px;
+    }
+    .profile-name h1{
+      margin-top: -30px;
+      font-weight: 700;
+      padding-bottom: 20px;
+      color: var(--Very-dark-desaturated-blue);
+    }
+    span{
+      color: var(--Dark-grayish-blue);
+    }
+    h2{
+      color: var(--Dark-grayish-blue);
+      margin-bottom: 20%;
+    }
+    .profile-stats{
+      width: 100%;
+      display: flex;
+      justify-items: center;
+      align-items: center;
+      flex-direction: row;
+      border-top: 3px solid hsla(185, 75%, 39%, .1);
+    }
+    .profile-stats h1{
+      font-weight: 700;
+      color: var(--Very-dark-desaturated-blue);
+    }
+    .profile-stats p{
+      color: var(--Dark-gray);
+      font-size: .7em;
+    }
+    .stats{
+      margin-top: 10%;
+      margin-left: 15%;
+    }
+    .attribution{ 
+      font-size: 11px; text-align: center;
+    }
+    .attribution a{
+      color: hsl(228, 45%, 44%);
+      font-size: 11px;
+      text-decoration: none;
+    }
+    @media(max-width: 1050px){
+      .bg-pattern-top{
+        width: 700px;
+        height: 700px;
+        top: -75%;
+        left: -15%;
+        
+      }
+      .bg-pattern-bottom{
+        width: 700px;
+        height: 700px;
+        right: -15%;
+        bottom: -75%;
+      }
+    }
+    @media(max-width: 750px){
+      .bg-pattern-top{
+        width: 700px;
+        height: 700px;
+        top: -75%;
+        left: -35%;
+        
+      }
+      .bg-pattern-bottom{
+        width: 700px;
+        height: 700px;
+        right: -35%;
+        bottom: -75%;
+      }
+    }
+    @media(max-width: 550px){
+      .bg-pattern-top{
+        width: 700px;
+        height: 700px;
+        top: -75%;
+        left: -105%;
+        
+      }
+      .bg-pattern-bottom{
+        width: 700px;
+        height: 700px;
+        right: -105%;
+        bottom: -75%;
+      }
+      .header-bg{
+        width: 350px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="bg-pattern-top">    
+    </div>
+    <div class="bg-pattern-bottom">      
+    </div>
+    <div class="content">
+      <div class="header-bg">
+      </div>
+      <div class="img">
+        <img src="./img/image-victor.jpg" alt="victor">
+      </div>
+      <div class="profile-name">
+        <h1>Victor Crest <span>26</span></h1>
+      </div>
+      <h2>London</h2>
+      <div class="profile-stats">
+        <div class="stats">
+          <h1>80K</h1>
+          <p>Followers</p>
+        </div>
+        <div class="stats">
+          <h1>803K</h1>
+          <p>Likes</p>
+        </div>
+        <div class="stats">
+          <h1>1.4K</h1>
+          <p>Photos</p>
+        </div>       
+      </div>    
+    </div>
+  </div>
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="https://jacram.github.io/">James Matthews</a>.
+  </div>
+</body>
+</html>
