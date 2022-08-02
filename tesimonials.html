@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | [Challenge Name Here]</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+      font-family: 'Barlow Semi Condensed', sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      box-sizing: border-box;
+    }
+    :root{
+      /*1. "Verified Graduate" has the same color as the person's name with 50% opacity
+        2. Review paragraphs inside the quotations have the same color as well, but are at 70% opacity*/
+      --Moderate-violet: hsl(263, 55%, 52%);
+      --Very-dark-grayish-blue: hsl(217, 19%, 35%);
+      --Very-dark-blackish-blue: hsl(219, 29%, 14%);
+      --White: hsl(0, 0%, 100%);
+      --Light-gray: hsl(0, 0%, 81%);
+      --Light-grayish-blue: hsl(210, 46%, 95%);
+    }
+    .container{
+      background: var(--Light-grayish-blue);
+      height: 98vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .profiles{
+      height: 500px;
+      width: 80%;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      grid-gap: 1em;
+      grid: flex-wrap;
+      transition: 1s;
+    }
+    .profile{
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+    .card{
+      padding: 10px 25px;
+    }
+    h1{
+      margin-bottom: 20px;
+      font-size: 1.6em;
+      padding: 0px 10px;
+      font-weight: 600;
+    }
+    h3{
+      font-size: 1.1em;
+    }
+    h4{
+      font-size: .9em;
+    }
+    p{
+      font-size: 1.05em;
+      line-height: 18px;
+      padding: 0px 12px;
+    }
+    .profile-img img{
+      width: 35px;
+      border-radius: 50%;
+      margin: 10px 0px 20px 5px;
+      padding: 2px;
+    }
+    .profile-name{
+      grid-column: 1/5;
+      grid-row: 1;
+      margin: 10px 0px 10px 50px;
+    }
+    .clifford{
+      min-width: 550px;
+      background: var(--Moderate-violet);
+      border-radius: 10px;
+      grid-column: 1/3;
+      transform: 1s;
+    }
+    .profile-img{
+      grid-column: 1/3;
+      grid-row: 1;
+    }
+    .testimony{
+      display: grid;
+      grid-template-rows: 1fr 1fr;
+    }
+    .clifford h3{
+      color: var(--Light-grayish-blue);
+    }
+    .clifford h4{
+      color: hsla(210, 46%, 95%, .5);
+    }
+    .bg-img{
+      grid-column: 3/5;
+      grid-row: 1;
+      margin-top: -10px;
+      margin-left: 80px;
+    }
+    .clifford h1{
+      margin-top: -30px;
+      color: var(--Light-grayish-blue);
+    }
+    .clifford p{
+      margin-top: -10px;
+      color: hsla(210, 46%, 95%, .5);
+    } 
+    .walters{
+      min-width: 275px;
+      background: var(--Very-dark-grayish-blue);
+      border-radius: 10px;
+      grid-column: 3/4;
+    }
+    .walters h3{
+      color: var(--Light-grayish-blue);
+    }
+    .walters h4{
+      color: hsla(210, 46%, 95%, .5);
+    }
+    .walters h1{
+      color: var(--Light-grayish-blue);
+      font-weight: 600;
+    }
+    .walters p{
+      color: hsla(210, 46%, 95%, .5);
+    }
+    .harmon{
+      min-width: 275px;
+      background: var(--White);
+      border-radius: 10px;
+      grid-row: 2;
+    }
+    .harmon h3{
+      color: var(--Very-dark-blackish-blue);
+      font-weight: 600;
+    }
+    .harmon h4{
+      color:  hsla(217, 19%, 35%, .7);
+    }
+    .harmon h1{
+      color:  hsl(217, 19%, 35%);
+      font-weight: 600;
+    }
+    .harmon p{
+      color:  hsla(217, 19%, 35%, .5);
+    }
+    .abrams{
+      min-width: 550px;
+      background: var(--Very-dark-blackish-blue);
+      border-radius: 10px;
+      grid-column: 2/4;
+      grid-row: 2/3;
+    }
+    .abrams h3{
+      color: var(--Light-grayish-blue);
+    }
+    .abrams h4{
+      color: hsla(210, 46%, 95%, .5);
+    }
+    .abrams h1{
+      color: var(--Light-grayish-blue);
+      font-weight: 600;
+    }
+    .abrams p{
+      color: hsla(210, 46%, 95%, .5);
+    }
+    .whittle{
+      grid-area: auto;
+      min-width: 275px;
+      background: var(--White);
+      border-radius: 10px;
+      grid-column: 4/5;
+      grid-row: 1/3;
+    }
+    .whittle h3{
+      color: var(--Very-dark-blackish-blue);
+      font-weight: 600;
+    }
+    .whittle h4{
+      color:  hsla(217, 19%, 35%, .7);
+    }
+    .whittle h1{
+      color:  hsl(217, 19%, 35%);
+      font-weight: 600;
+    }
+    .whittle p{
+      color:  hsla(217, 19%, 35%, .5);
+    }
+    @media(max-width: 1300px){
+      .container{
+        height: 1000px;
+      }
+      .profiles{
+        margin-top: -300px;
+        width: 90%;
+        grid-template-rows: 1fr 1fr;
+      }
+      .whittle{
+        grid-row: 3;
+        grid-column: 1/4;
+      }
+    }
+    @media(max-width: 960px){
+      .container{
+        height: 1200px;
+      }
+      .profiles{
+        margin-top: -600px;
+        grid-template-columns: 1fr 1fr;
+        width: 95%;
+        justify-tracks: center;
+      }
+      .clifford{
+        grid-column: 1/3;
+      }
+      .walters{
+        grid-column: 1/2;
+        grid-row: 2;
+      }
+      .harmon{
+        grid-column: 2/3;
+        grid-row: 2;
+      }
+      .abrams{
+        grid-column: 1/3;
+        grid-row: 3;
+      }
+      .whittle{
+        min-width: 575px;
+        grid-column: 1/3;
+        grid-row: 4;
+      }
+    }
+    @media(max-width: 615px){
+      .container{
+        height: 2100px;
+      }
+      .profiles{
+        margin-top: -1500px;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        width: 80%;
+      }
+      .bg-img{
+        margin-left: 40px;
+      }
+      .clifford{
+        min-width: 300px;
+        grid-column: 1/2;
+        grid-row: 1;
+      }
+      .walters{
+        min-width: 300px;
+        grid-column: 1/2;
+        grid-row: 2;
+      }
+      .harmon{
+        min-width: 300px;
+        grid-column: 1/2;
+        grid-row: 3;
+      }
+      .abrams{
+        min-width: 300px;
+        grid-column: 1/2;
+        grid-row: 4;
+      }
+      .whittle{
+        min-width: 300px;
+        grid-column: 1/2;
+        grid-row: 5;
+      }
+    }
+    .attribution{
+       font-size: 11px; text-align: center; 
+      }
+    .attribution a{ 
+      color: hsl(228, 45%, 44%); font-size: 11px;
+    }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <div class="profiles">
+        <div class="clifford"> 
+          <div class="profile-card1 card">
+            <div class="profile">
+              <div class="profile-img">
+                <img src="./img/image-daniel.jpg" alt="Daniel">
+              </div>
+              <div class="profile-name">
+                <h3>Daniel Clifford</h3>  
+                <h4>Verified Graduate</h4>
+              </div>
+              <div class="bg-img">
+                <svg width="104" height="102" xmlns="http://www.w3.org/2000/svg"><path d="M104 102V59.727H84.114c0-5.871.689-11.182 2.068-15.933 1.379-4.75 3.42-9.287 6.125-13.61C95.01 25.86 98.909 22.257 104 19.375V0c-9.758 4.27-17.712 9.874-23.864 16.813-6.151 6.939-10.712 14.545-13.681 22.818C63.485 47.904 62 59.941 62 75.74V102h42zm-62 0V59.727H22.114c0-5.871.689-11.182 2.068-15.933 1.379-4.75 3.42-9.287 6.125-13.61C33.01 25.86 36.909 22.257 42 19.375V0c-9.652 4.27-17.58 9.874-23.784 16.813C12.01 23.752 7.424 31.358 4.455 39.631 1.485 47.904 0 59.941 0 75.74V102h42z" fill="#A775F1" fill-rule="nonzero"/></svg>
+              </div>
+            </div>
+              <div class="testimony">
+                <h1>
+                  I received a job offer mid-course, and the subjects I learned were current, if not more so, 
+                  in the company I joined. I honestly feel I got every penny’s worth.
+                </h1>
+                <p>
+                  “ I was an EMT for many years before I joined the bootcamp. I’ve been looking to make a 
+                  transition and have heard some people who had an amazing experience here. I signed up 
+                  for the free intro course and found it incredibly fun! I enrolled shortly thereafter. 
+                  The next 12 weeks was the best - and most grueling - time of my life. Since completing 
+                  the course, I’ve successfully switched careers, working as a Software Engineer at a VR startup. ”
+                </p>
+              </div>            
+          </div>
+        </div>
+        <div class="walters"> 
+          <div class="profile-card2 card">
+            <div class="profile">
+              <div class="profile-img">
+                <img src="./img/image-jonathan.jpg" alt="Jonathan">
+              </div>
+              <div class="profile-name">
+                <h3>Jonathan Walters</h3>  
+                <h4>Verified Graduate</h4>
+              </div>
+            </div>
+              <div class="testimony">
+                <h1>
+                  The team was very supportive and kept me motivated
+                </h1>
+                <p>
+                  “ I started as a total newbie with virtually no coding skills. I now work as a mobile engineer 
+                  for a big company. This was one of the best investments I’ve made in myself. ”
+                </p>
+              </div>            
+          </div>
+        </div>
+        <div class="harmon"> 
+          <div class="profile-card3 card">
+            <div class="profile">
+              <div class="profile-img">
+                <img src="./img/image-jeanette.jpg" alt="Jeanette">
+              </div>
+              <div class="profile-name">
+                <h3>Jeanette Harmon</h3>  
+                <h4>Verified Graduate</h4>
+              </div>
+            </div>
+              <div class="testimony">
+                <h1>
+                  An overall wonderful and rewarding experience
+                </h1>
+                <p>
+                  “ Thank you for the wonderful experience! I now have a job I really enjoy, and make a good living 
+                  while doing something I love. ”
+                </p>
+              </div>            
+          </div>
+        </div>
+        <div class="abrams"> 
+          <div class="profile-card4 card">
+            <div class="profile">
+              <div class="profile-img">
+                <img src="./img/image-patrick.jpg" alt="Patrick">
+              </div>
+              <div class="profile-name">
+                <h3>Patrick Abrams</h3>  
+                <h4>Verified Graduate</h4>
+              </div>
+            </div>
+              <div class="testimony">
+                <h1>
+                  Awesome teaching support from TAs who did the bootcamp themselves. Getting guidance from them and 
+                  learning from their experiences was easy.
+                </h1>
+                <p>
+                  “ The staff seem genuinely concerned about my progress which I find really refreshing. The program 
+                  gave me the confidence necessary to be able to go out in the world and present myself as a capable 
+                  junior developer. The standard is above the rest. You will get the personal attention you need from 
+                  an incredible community of smart and amazing people. ”
+                </p>
+              </div>            
+          </div>
+        </div>
+        <div class="whittle"> 
+          <div class="profile-card5 card">
+            <div class="profile">
+              <div class="profile-img">
+                <img src="./img/image-kira.jpg" alt="Kira">
+              </div>
+              <div class="profile-name">
+                <h3>Kira Whittle</h3>  
+                <h4>Verified Graduate</h4>
+              </div>
+            </div>
+              <div class="testimony-whittle">
+                <h1>
+                  Such a life-changing experience. Highly recommended!
+                </h1>
+                <p>
+                  “ Before joining the bootcamp, I’ve never written a line of code. I needed some structure from 
+                  professionals who can help me learn programming step by step. I was encouraged to enroll by a former 
+                  student of theirs who can only say wonderful things about the program. The entire curriculum and staff 
+                  did not disappoint. They were very hands-on and I never had to wait long for assistance. The agile team 
+                  project, in particular, was outstanding. It took my learning to the next level in a way that no tutorial 
+                  could ever have. In fact, I’ve often referred to it during interviews as an example of my developent 
+                  experience. It certainly helped me land a job as a full-stack developer after receiving multiple offers. 
+                  100% recommend! ”
+                </p>
+              </div>            
+          </div>
+        </div>
+      </div>
+</main>
+<footer>
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="https://jacram.github.io/">James Matthews</a>.
+  </div>
+</footer>
+</body>
+</html>
