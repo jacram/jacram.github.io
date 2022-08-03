@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link href="https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Single Price Grid Component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    :root{
+      --Cyan: hsl(179, 62%, 43%);
+      --Bright-Yellow: hsl(71, 73%, 54%);
+      --Light-Gray: hsl(204, 43%, 93%);
+      --Grayish-Blue: hsl(218, 22%, 67%);
+    }
+    .container{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Karla', sans-serif;
+      font-weight: 400;
+      font-size: 16px;
+      height: 98vh;
+      background: var(--Light-Gray);
+      padding: 20px 0;
+    }
+    .context{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      height: 600px;
+      width: 700px;
+      margin-top: 3%;
+      border-radius: 10px;
+      box-shadow: 0 15px 15px rgba(2, 2, 2, .2);
+    }
+    .join{
+      background: hsl(255, 95%, 99%);
+      border-radius: 10px 10px 0px 0px;
+      padding: 40px 40px 0px 40px;
+      grid-column: 1/3;
+      grid-row: 1;
+    }
+    .join h1{
+      color: var(--Cyan);
+      font-weight: 700;
+      margin-bottom: 40px;
+    }
+    .join h3{
+      color: var(--Bright-Yellow);
+      font-size: 1.5em;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+    .join p{
+      color: var(--Grayish-Blue);
+      font-size: 1.1em;
+      line-height: 25px;
+    }
+    .subscribe{
+      background: var(--Cyan);
+      border-radius: 0px 0px 0px 10px;
+      padding: 40px;
+    }
+    h2{
+      color: hsla(255, 95%, 99%, .9);
+      font-size: 1.5em;
+      margin-bottom: 30px;
+    }
+    span{
+      color: hsla(255, 95%, 99%, .9);
+      font-size: 1.6em;
+      margin-right: 15px;
+    }
+    h4{
+      color: hsla(255, 95%, 99%, .5);
+      font-size: 1.5em;
+      line-height: 40px;
+      margin-bottom: 20px;
+    }
+    .day-price{
+      color: hsla(255, 95%, 99%, .8);
+      font-size: 1em;
+      margin-bottom: 40px;
+    }
+    .btn button{
+      width: 100%;
+      background-color: var(--Bright-Yellow);
+      color: hsla(255, 95%, 99%, .7);
+      justify-content: center;
+      border: none;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 15px 15px rgba(2, 2, 2, .1);
+      font-weight: 700;
+      font-size: 1em;
+      cursor: pointer;
+    }
+    .why-us{
+      background: hsla(179, 62%, 43%, .8);
+      border-radius: 0px 0px 10px 0px;
+      padding: 40px 40px 0px 40px;
+    }
+    ul{
+      list-style: none;
+    }
+    li{
+      color: hsla(255, 95%, 99%, .5);
+      line-height: 25px;
+      font-size: 1.1em;
+      text-decoration: none;
+    }
+    @media(max-width: 725px){
+      .container{
+        height: 1000px;
+      }
+      .context{
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr fr;
+        height: 900px;
+        margin-top: 5%;
+      }
+      .join{
+        grid-column: 1;
+        grid-row: 1;
+      }
+      .subscribe{
+        border-radius: 0;
+      }
+      .why-us{
+        border-radius: 0px 0px 10px 10px;
+      }
+    }
+    @media(max-width: 450px){
+      .container{
+        width: 100vw;
+        height: 950px;
+      }
+      .context{
+        width: 325px;
+        align-items: center;
+        justify-content: center;
+        height: 800px;
+        margin-top: 2.5%;
+      }
+      .join{
+        padding: 20px;
+        width: 325px;
+        height: 300px;
+      }
+      .join h1{
+        font-size: 1.45em;
+        margin-bottom: 20px;
+      }
+      .join h3{
+        font-size: 1.1em;
+      }
+      .join p{
+        font-size: .9em;
+        line-height: 25px;
+      }
+      .subscribe{
+        width: 325px;
+        height: 250px;
+        padding: 20px;
+      }
+      h2{
+        font-size: 1.2em;
+        margin-bottom: 20px;
+      }
+      span{
+        color: hsla(255, 95%, 99%, .9);
+        font-size: 1.3em;
+        margin-right: 15px;
+      }
+      h4{
+        font-size: 1.2em;
+        line-height: 40px;
+        margin-bottom: 20px;
+      }
+      .day-price{
+        color: hsla(255, 95%, 99%, .8);
+        font-size: 1em;
+        margin-bottom: 20px;
+      }
+      .why-us{
+        width: 325px;
+        height: 250px;
+        padding: 20px;
+      }
+      li{
+        line-height: 22px;
+        font-size: .9em;
+      }
+    }
+    .attribution{ 
+      font-size: 11px; text-align: center; 
+    }
+    .attribution a{ 
+      color: hsl(228, 45%, 44%); 
+    }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <div class="context">
+      <div class="join">
+        <div class="header">
+          <h1>Join our community</h1>
+        </div>
+        <div class="guarantee">
+          <h3>30-day, hassle-free money back guarantee</h3>
+        </div>
+        <div class="information">
+          <p>
+            Gain access to our full library of tutorials along with expert code reviews. 
+            Perfect for any developers who are serious about honing their skills.
+          </p>
+        </div>
+      </div>
+      <div class="subscribe">
+        <div class="sub-header">
+          <h2>Monthly Subscription</h2>
+        </div>
+        <div class="price">
+          <h4><span>&dollar;29</span>per month</h4> 
+        </div>
+        <div class="day-price">
+          <p>Full access for less than &dollar;1 a day</p>
+        </div>
+        <div class="btn">
+          <button>Sign Up</button>
+        </div>
+      </div>
+      <div class="why-us">
+        <div class="whyUs-header">
+          <h2>Why Us</h2>
+        </div>
+        <div class="whyUs-list">
+          <ul>
+            <li>Tutorials by industry experts</li>
+            <li>Peer &amp; expert code review</li>
+            <li>Coding exercises</li>
+            <li>Access to our GitHub repos</li>
+            <li>Community forum</li>
+            <li>Flashcard decks</li>
+            <li>New videos every week</li>
+          </ul>
+        </div>
+      </div>  
+    </div>
+  </main>
+  <footer>
+    <p class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="https://jacram.github.io/">James Matthews</a>.
+    </p>
+  </footer>
+</body>
+</html>
