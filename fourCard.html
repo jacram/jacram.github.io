@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="./img/favicon-32x32.png">
+  <title>Frontend Mentor | Four card feature section</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+    :root{
+    --Red: hsl(0, 78%, 62%);
+    --Cyan: hsl(180, 62%, 55%);
+    --Orange: hsl(34, 97%, 64%);
+    --Blue: hsl(212, 86%, 64%);
+    --Very-Dark-Blue: hsl(234, 12%, 34%);
+    --Grayish-Blue: hsl(229, 6%, 66%);
+    --Very-Light-Gray: hsl(0, 0%, 98%);
+    }
+    .container{
+      height: 98vh;
+      Font-size: 15px;
+      font-weight: 200;
+      display: flexbox;
+      justify-content: center;
+      align-items: center;
+      background: var(--Very-Light-Gray);
+    }
+    .main-header{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: var(--Very-Dark-Blue);
+    }
+    h1{
+      padding-top: 60px;
+      font-weight: 200;
+      transition: 1s;
+    }
+    h2{
+      color: var(--Very-Dark-Blue);
+      margin-bottom: 10px;
+    }
+    span{
+      font-weight: 600;
+    }
+    h3{
+      margin: 20px 0px;
+      width: 450px;
+      color: var(--Grayish-Blue);
+      font-weight: 400;
+      font-size: .9em;
+    }
+    p{
+      font-size: .8em;
+      line-height: 1.5em;
+      color: var(--Grayish-Blue);
+      font-weight: 400;
+    }
+    .content{
+      display: flex;
+      justify-content: center;
+    }
+    .cards{
+      width: 950px;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 2em;
+      margin-right: 8%;
+      transition: 1s;
+    }
+    .card{
+      width: 300px;
+      height: 225px;
+      padding: 20px;
+      border-radius: 10px;
+      background-color: #fff;
+      box-shadow: 10px 15px 15px rgba(2, 2, 2, .2);
+    }
+    .cyan{
+      border-top: 5px solid var(--Cyan);
+      background-image: url(./img/icon-supervisor.svg);
+      background-repeat: no-repeat;
+      background-position: bottom 25px right 25px;
+      margin-left: 65px;
+    }
+    .red{
+      border-top: 5px solid var(--Red);
+      background-image: url(./img/icon-team-builder.svg);
+      background-repeat: no-repeat;
+      background-position: bottom 25px right 25px;
+    }
+    .orange{
+      border-top: 5px solid var(--Orange);
+      background-image: url(./img/icon-karma.svg);
+      background-repeat: no-repeat;
+      background-position: bottom 25px right 25px;
+    }
+    .blue{
+      border-top: 5px solid var(--Blue);
+      background-image: url(./img/icon-calculator.svg);
+      background-repeat: no-repeat;
+      background-position: bottom 25px right 25px;
+    }
+    .supervisor-card{
+      display: flex;
+      align-items: center;
+      grid-row: 1/3;
+    }
+    .calculator-card{
+      display: flex;
+      align-items: center;
+      grid-column: 3;
+      grid-row: 1/3;
+    }
+    @media(max-width: 1050px){
+      .cards{
+        width: 650px;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        margin-right: 0%;
+      }
+      .supervisor-card{
+        display: flex;
+        align-items: center;
+        grid-row: 1;
+      }
+      .team-builder-card{
+        grid-row: 2;
+      }
+      .calculator-card{
+        display: flex;
+        align-items: center;
+        grid-column: 2;
+        grid-row: 2;
+      }
+      .cyan{
+        margin: 0;
+      }
+    }
+    @media(max-width: 650px){
+      .container{
+        height: 1250px;
+      }
+      h1{
+        padding-top: 30px;
+        font-size: 1.5em;
+      }
+      h3{
+        margin: 20px 0px;
+        width: 100%;
+        padding: 0px 35px;
+      }
+      .cards{
+        width: 325px;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        margin-right: -5%;
+      }
+      .supervisor-card{
+        grid-row: 1;
+      }
+      .team-builder-card{
+        grid-row: 2;
+      }
+      .karma-card{
+        grid-row: 3;
+      }
+      .calculator-card{
+        grid-column: 1;
+        grid-row: 4;
+      }
+      .cyan{
+        margin: 0;
+      }
+    }
+    .attribution{ 
+      font-size: 11px; 
+      text-align: center; 
+    }
+    .attribution a{ 
+      color: hsl(228, 45%, 44%); 
+    }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <div class="main-header">
+      <div class="title">
+        <h1>Reliable, efficient delivery<br><span>Powered by Technology</span></h1>
+        <h3>
+          Our Artificial Intelligence powered tools use millions of project data points 
+          to ensure that your project is successful
+        </h3>
+      </div>
+    </div>
+    <div class="content">
+      <div class="cards">
+        <div class="supervisor-card">
+          <div class="cyan card">
+            <h2>Supervisor</h2>
+            <p>Monitors activity to identify project roadblocks</p>
+          </div>
+        </div>
+        <div class="team-builder-card">
+          <div class="red card">
+            <h2>Team Builder</h2>
+            <p>Scans our talent network to create the optimal team for your project</p>
+            <img src="" alt="">
+          </div>
+        </div>
+        <div class="karma-card">
+          <div class="orange card">
+            <h2>Karma</h2>
+            <p>Regularly evaluates our talent to ensure quality</p>
+            <img src="" alt="">
+          </div>
+        </div>
+        <div class="calculator-card">
+          <div class="blue card">
+            <h2>Calculator</h2>
+            <p>Uses data from past projects to provide better delivery estimates</p>
+            <img src="" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <p class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="https://jacram.github.io/">James Matthews</a>.
+    </p>
+  </footer>
+</body>
+</html>
