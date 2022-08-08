@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Fylo data storage component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    :root{
+      --Gradient: linear-gradient( hsl(6, 100%, 80%), hsl(335, 100%, 65%));
+      --Pale-Blue: hsl(243, 100%, 93%);
+      --Grayish-Blue: hsl(229, 7%, 55%);
+      --Dark-Blue: hsl(228, 56%, 26%);
+      --Very-Dark-Blue: hsl(229, 57%, 11%);
+    }
+    body{
+      height: 100%;
+      font-size: 14px;
+      font-family: 'Raleway', sans-serif;
+      font-weight: 400;
+    }
+    .container{
+      display: flex;
+      align-items: center;
+      align-content: center;
+      justify-content: center;
+      height: 100vh;
+      background: var(--Very-Dark-Blue);
+      background-image: url(./img/bg-desktop.png);
+      background-position: bottom;
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+    .content{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 100px;
+      margin-bottom: 45px;
+      max-width: 1440px;
+    }
+    .box1{
+      background: var(--Dark-Blue);
+      border-radius: 0px 80px 0px 0px;
+      padding: 30px 120px 30px 30px;
+    }
+    .files{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 20px 0px;
+    }
+    .document{
+      background: var(--Very-Dark-Blue);
+      padding: 10px 11px;
+      border-radius: 10px;
+    }
+    .folder{
+      background: var(--Very-Dark-Blue);
+      margin: 0px 15px;
+      padding: 12px 9px;
+      border-radius: 10px;
+    }
+    .upload{
+      background: var(--Very-Dark-Blue);
+      padding: 14px 9px;
+      border-radius: 10px;
+    }
+    .box2{
+      width: 400px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: left;
+      height: 50%;
+      background: var(--Dark-Blue);
+      margin-top: 50px;
+      margin-left: 25px;
+      border-radius: 10px;
+      padding: 5px 5px 5px 55px;
+    }
+    .storage-info{
+      width: 80%;
+    }
+    .storage-bar{
+      width: 100%;
+      height: 15px;
+      border-radius: 20px;
+      background-color: var(--Very-Dark-Blue);
+    }
+    .storage-amount{
+      width: 81.5%;
+      height: 100%;
+      background: var(--Gradient);
+      border-radius: 20px;
+    }
+    .white-circle{
+      margin-left: 94%;
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      background: var(--Pale-Blue);
+    }
+    .storage-range{
+      display: flex;
+      justify-content: space-between;
+      color: var(--Pale-Blue);
+      font-weight: 700;
+      margin: 10px 0px 35px 0px;
+    }
+    .used-storage p{
+      color: var(--Pale-Blue);
+      margin: 30px 0px 15px 0px;
+    }
+    .used-storage span{
+      font-weight: 700;
+    }
+    .storage-left{
+      padding: 15px;
+      border-radius: 15px 15px 0px 15px;
+      min-width: 150px;
+      height: 35px;
+      color: var(--Very-Dark-Blue);
+      background: #fff;
+      position: relative;
+      top: -100px;
+      left: -365px;
+    }
+    .storage-left span{
+      font-size: 14px;
+      margin-left: 15px;
+      font-variant: small-caps;
+      font-weight: 600;
+      opacity: 70%;
+    }
+    .triangle{
+      margin-top: 17px;
+      margin-left: 96.5%;
+      height: 20px;
+      width: 20px;
+      background-color: #fff;
+      clip-path: polygon(100% 0, 0 0, 100% 100%);
+    }
+    @media(max-width: 1160px){
+      .content{
+        flex-direction: column;
+      }
+      .storage-left{
+        display: inline;
+        padding: 15px;
+        border-radius: 15px 15px 15px 15px;
+        width: 150px;
+        height: 35px;
+        color: var(--Very-Dark-Blue);
+        background: #fff;
+        position: relative;
+        top: 170px;
+        left: -450px;
+      }
+      .triangle{
+        height: 0px;
+        width: 0px;
+      }
+    }
+    @media(max-width: 750px){
+      .container{
+        background-image: url(./img/bg-mobile.png);
+        background-position: center;
+      }
+      .content{
+        display: flex;
+        align-items: center;
+        margin-top: -40px;
+        padding: 0px;
+        max-width: 355px;
+      }
+      .box1{
+        margin-left: 125px;
+        background: var(--Dark-Blue);
+        border-radius: 10px 80px 10px 10px;
+        padding: 30px 120px 30px 30px;
+      }
+      .files{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 20px 0px;
+      }
+      .box2{
+        width: 275px;
+        height: 50%;
+        background: var(--Dark-Blue);
+        margin-top: 15px;
+        margin-left: 125px;
+        border-radius: 10px;
+        padding: 5px 5px 5px 25px;
+      }
+      .storage-info{
+        width: 80%;
+      }
+      .storage-range{
+        display: flex;
+        justify-content: space-between;
+        color: var(--Pale-Blue);
+        font-weight: 700;
+        margin: 10px 0px 35px 0px;
+      }
+      .storage-left{
+        min-width: 102px;
+        top: 130px;
+        left: -210px;
+      }
+    }
+    .attribution{
+      font-size: 11px; 
+      text-align: center; 
+    }
+    .attribution a{ 
+      color: hsl(228, 45%, 44%); 
+    }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <div class="content">
+      <div class="box1">
+        <div class="logo">
+          <img src="./img/logo1.svg" alt="Logo">
+        </div>
+        <div class="files">
+          <div class="document">
+            <img src="./img/icon-document.svg" alt="Document">
+          </div>
+          <div class="folder">
+            <img src="./img/icon-folder.svg" alt="Folder">
+          </div>
+          <div class="upload">
+            <img src="./img/icon-upload.svg" alt="Upload">
+          </div>
+        </div>
+      </div>
+      <div class="box2">
+        <div class="used-storage">
+          <p>You’ve used <span>815 GB</span> of your storage</p>
+        </div>
+        <div class="storage-info">
+          <div class="storage-bar">
+          <div class="storage-amount">
+            <div class="white-circle"></div>
+          </div>
+          </div>
+          <div class="storage-range">
+            <p>0 GB</p><p>1000 GB</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="storage-left">
+      <h1>185<span>gb left</span></h1>
+      <div class="triangle"></div>
+    </div>
+  </main>
+<footer>
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="https://jacram.github.io/">James Matthews</a>.
+  </div>
+</footer>  
+</body>
+</html>
