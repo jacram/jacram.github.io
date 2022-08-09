@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="./img/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Clipboard landing page</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    :root{
+      --Strong-Cyan: hsl(171, 66%, 44%);
+      --Light-Blue: hsl(233, 100%, 69%);
+      --Dark-Grayish-Blue: hsl(210, 10%, 33%);
+      --Grayish-Blue: hsl(201, 11%, 66%);
+    }
+    .container{
+      max-width: 100%;
+      color: var(--Dark-Grayish-Blue);
+      font-family: 'Bai Jamjuree', sans-serif;
+      font-weight: 400;
+    }
+    p{
+      opacity: 50%;
+    }
+    .bg-header{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 300px;
+      background-image: url(./img/bg-header-desktop.png);
+      background-position: fixed;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+    .bg-header img{
+      margin-top: 5%;
+      width: 75px;
+      height: 75px;
+    }
+    .header-text{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+    }
+    .header-text p{
+      max-width: 550px;
+      margin: 10px 0px 20px 0px;
+      line-height: 1.6em;
+    }
+    .buttons{
+      display: flex;
+      margin-bottom: 70px;
+    }
+    .ios-btn button{
+      background: var(--Strong-Cyan);
+      margin: 15px;
+      padding: 10px 25px;
+      color: #fff;
+      border-top: none;
+      border-left: 2px solid hsl(171, 66%, 42%);
+      border-right: 2px solid hsl(171, 66%, 42%);
+      border-bottom: 2px solid hsl(171, 66%, 42%);
+      border-radius: 20px;
+      box-shadow: 0 2px 2px hsla(171, 66%, 44%, .8);
+      cursor: pointer;
+    }
+    .mac-btn button{
+      background: var(--Light-Blue);
+      margin: 15px;
+      padding: 10px 25px;
+      color: #fff;
+      border-top: none;
+      border-left: 2px solid hsl(233, 100%, 67%);
+      border-right: 2px solid hsl(233, 100%, 67%);
+      border-bottom: 2px solid hsl(233, 100%, 67%);
+      border-radius: 20px;
+      box-shadow: 0 2px 2px hsla(233, 100%, 69%, .8);
+      cursor: pointer;
+    }
+    .snippets{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+      
+    }
+    .snippets p{
+      width: 625px;
+      margin: 10px 0px 40px 0px;
+    }
+    .snippets-info{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .computer-img img{
+      width: 80%;
+      padding-bottom: 75px;
+    }
+    .snippets-text{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .snippets-discription{
+      width: 335px;
+      margin-bottom: 50px;
+    }
+    .snippets-discription h3{
+      margin-bottom: 10px;
+    }
+    .clipboard{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+    }
+    .clipboard p{
+      width: 625px;
+      margin: 10px 0px 40px 0px;
+    }
+    .mobile-devices{
+      display: flex;
+      justify-content: center;
+    }
+    .mobile-devices img{
+      width: 70%;
+      padding: 20px 0px 50px 0px;
+    }
+    .super-charge{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+    }
+    .super-charge p{
+      width: 625px;
+      margin: 10px 0px 40px 0px;
+    }
+    .supercharge-tools{
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      text-align: center;
+    }
+    .supercharge-tools img{
+      margin-bottom: 25px;
+    }
+    .supercharge-tools p{
+      line-height: 1.6em;
+      width: 350px;
+      margin: 10px 0px 50px 0px;
+    }
+    .computing-logos{
+      display: flex;
+      justify-content: space-around;
+      margin: 75px 0px 100px 0px;
+    }
+    .computing-logos img{
+      height: 10%;
+      width: 10%;
+    }
+    .footer{
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      background: hsla(201, 11%, 66%, .1);
+    }
+    .logo img{
+      margin: 40px 0px;
+      width: 50px;
+    }
+    .links{
+      display: flex;
+      padding-top: 10px;
+    }
+    .links a{
+      padding: 5px;
+      text-decoration: none;
+    } 
+    .link-column{
+      display: flex;
+      flex-direction: column;
+      padding: 10px;
+    }
+    .social-media img{
+      padding: 7px;
+    }
+    @media(max-width: 1050px){
+      .bg-header{
+        background-image: url(./img/bg-header-mobile.png);
+      }
+      .header-text{
+        padding: 0px 20px;
+      }
+      .header-text p{
+        padding: 0px 13px;
+      }
+      .buttons{
+        flex-direction: column;
+      }
+      .ios-btn button{
+        background: var(--Strong-Cyan);
+        margin: 15px 0px 0px 0px;
+        padding: 10px 65px;
+      }
+      .mac-btn button{
+        background: var(--Light-Blue);
+        margin: 15px 0px 0px 0px;
+        padding: 10px 65px;
+      }
+      .snippets{
+        margin-top: 40px;
+      }
+      .snippets p{
+        width: 310px;
+      }
+      .snippets h2{
+        padding: 0px 50px;
+      }
+      .snippets-info{
+        flex-direction: column;
+        text-align: center;
+      }
+      .computer-img img{
+        margin-top: 20px;
+      }
+      .snippets-discription p{
+        padding: 0px 20px;
+      }
+      .clipboard h2{
+        padding: 0px 50px;
+      }
+      .clipboard p{
+        width: 305px;
+      }
+      .mobile-devices img{
+        width: 90%;
+      }
+      .super-charge{
+        padding: 0px 50px;
+      }
+      .super-charge p{
+        width: 325px;
+      }
+      .supercharge-tools{
+        flex-direction: column;
+      }
+      .supercharge-tools p{
+        width: 325px;
+      }
+      .computing-logos{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      .computing-logos img{
+        height: 40%;
+        width: 40%;
+        padding: 40px 0px;
+      }
+      .footer{
+        margin-top: 75px;
+        flex-direction: column;
+      }
+      .links{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+      }
+      .links a{
+        padding: 15px 0px;
+      } 
+      .link-column{
+        padding: 0px;
+      }
+      .social-media img{
+        margin-top: 20px;
+        padding: 7px 15px;
+      }
+    }
+    .attribution{ 
+      font-size: 11px; 
+      text-align: center; 
+      padding-bottom: 5px;
+    }
+    .attribution a{ 
+      color: hsl(228, 45%, 44%); 
+    }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <div class="bg-header">
+      <img src="./img/clogo.svg" alt="">
+    </div>
+    <div class="header-text">
+      <h1>A history of everything you copy</h1>
+      <p> 
+        Clipboard allows you to track and organize everything you 
+        copy. Instantly access your clipboard on all your devices.
+      </p>
+      <div class="buttons">
+        <div class="ios-btn">
+          <button>Download for iOS</button>
+        </div>
+        <div class="mac-btn">
+          <button>Download for Mac</button>
+        </div>
+      </div>
+    </div>
+    <div class="snippets">
+      <h2>Keep track of your snippets</h2>
+      <p> 
+        Clipboard instantly stores any item you copy in the cloud, 
+        meaning you can access your snippets immediately on all your 
+        devices. Our Mac and iOS apps will help you organize everything.
+      </p>
+    </div>
+    <div class="snippets-info">
+      <div class="computer-img">
+        <img src="./img/image-computer.png" alt="cumputer">
+      </div>
+      <div class="snippets-text">
+        <div class="snippets-discription">
+          <h3>Quick Search</h3>
+          <p>Easily search your snippets by content, category, web address, application, and more.</p>
+        </div>
+        <div class="snippets-discription">
+          <h3>iCloud Sync</h3>
+          <p>Instantly saves and syncs snippets across all your devices.</p>
+        </div>
+        <div class="snippets-discription">
+          <h3>Complete History</h3>
+          <p>Retrieve any snippets from the first moment you started using the app.</p>
+        </div>
+      </div>
+    </div>
+    <div class="clipboard">
+      <h2>Access Clipboard anywhere</h2>
+      <p>
+        Whether you’re on the go, or at your computer, you can access all your Clipboard 
+        snippets in a few simple clicks.</p>
+    </div>
+    <div class="mobile-devices">
+      <img src="./img/image-devices.png" alt="">
+    </div>
+    <div class="super-charge">
+      <h2>Supercharge your workflow</h2>
+      <p>We’ve got the tools to boost your productivity.</p>
+    </div>
+    <div class="supercharge-tools">
+      <div class="blacklist">
+        <img src="./img/icon-blacklist.svg" alt="">
+        <h3>Create blacklists</h3>
+        <p>Ensure sensitive information never makes its way to your clipboard by excluding certain sources.</p>
+      </div>
+      <div class="blacklist">
+        <img src="./img/icon-text.svg" alt="">
+        <h3>Plain text snippets</h3>
+        <p>Remove unwanted formatting from copied text for a consistent look.</p>
+      </div>
+      <div class="blacklist">
+        <img src="./img/icon-preview.svg" alt="">
+        <h3>Sneak preview</h3>
+        <p>Quick preview of all snippets on your Clipboard for easy access.</p>
+      </div>
+    </div>
+    <div class="computing-logos">
+      <img src="./img/logo-google.png" alt="">
+      <img src="./img/logo-ibm.png" alt="">
+      <img src="./img/logo-microsoft.png" alt="">
+      <img src="./img/logo-hp.png" alt="">
+      <img src="./img/logo-vector-graphics.png" alt="">
+    </div>
+    <div class="clipboard">
+      <h2>Clipboard for iOS and Mac OS</h2>
+      <p>
+        Available for free on the App Store. Download for Mac or iOS, sync with iCloud 
+        and you’re ready to start adding to your clipboard.
+      </p>
+      <div class="buttons">
+      <div class="ios-btn">
+        <button>Download for iOS</button>
+      </div>
+      <div class="mac-btn">
+        <button>Download for Mac</button>
+      </div>
+    </div>
+    </div>
+  <footer>
+    <div class="footer">
+      <div class="logo">
+        <img src="./img/clogo.svg" alt="">
+      </div>
+        <div class="links">
+          <div class="link-column">
+            <a href="">FAQs</a>
+            <a href="">Contact Us</a>
+          </div>
+          <div class="link-column">
+            <a href="">Privacy Policy</a>
+            <a href="">Press Kit</a>
+          </div>
+          <div class="link-column">
+            <a href="">Install Guide</a>
+          </div>
+        </div>
+        <div class="social-media">
+          <a href=""><img src="./img/icon-facebook.svg" alt=""></a>
+          <a href=""><img src="./img/icon-twitter.svg" alt=""></a>
+          <a href=""><img src="./img/icon-instagram.svg" alt=""></a>
+        </div>
+    </div>
+    <p class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="https://jacram.github.io/">James Matthews</a>.
+    </p>
+  </footer>
+  </main>
+</body>
+</html>
