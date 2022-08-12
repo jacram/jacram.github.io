@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Poppins:wght@600&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="./img/favicon-32x32.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>Frontend Mentor | Huddle landing page with alternating feature blocks</title>
+<!--font-family: 'Open Sans', sans-serif;
+    font-family: 'Poppins', sans-serif;-->
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    :root{
+      --Pink: hsl(322, 100%, 66%);
+      --Very-Pale-Cyan: hsl(193, 100%, 96%);
+      --Very-Dark-Cyan: hsl(192, 100%, 9%);
+      --Grayish-Blue: hsl(208, 11%, 55%);
+    }
+    h1, h2{
+      font-family: 'Poppins', sans-serif;
+    }
+    .container{
+      Font-size: 18px;
+    }
+    .huddle-main{
+      background-color: var(--Very-Pale-Cyan);
+      background-image: url(./img/bg-hero-desktop.svg);
+      background-size: contain;
+      background-repeat: no-repeat;
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 400;
+    }
+    .header{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 50px 50px 50px 75px;
+    }
+    .tryIt-btn button{
+      background: #fff;
+      font-weight: 700;
+      padding: 12px 55px;
+      cursor: pointer;
+      border: none;
+      border-radius: 25px;
+      box-shadow: 1px 4px 5px rgba(0, 0, 5, .5);
+    }
+    .huddle-main-content{
+      display: flex;
+    }
+    .main-text{
+      width: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: left;
+      flex-direction: column;
+      padding: 50px 40px 100px 70px;
+    }
+    .main-text h1{
+      padding-right: 105px;
+    }
+    .main-text p{
+      padding-right: 50px;
+      margin: 25px 0px;
+      font-size: .8em;
+    }
+    .main-img img{
+      width: 90%;
+      margin-bottom: 50px;
+      padding: 10px 50px 0px 0px;
+    }
+    .get-btn button{
+      background: var(--Pink);
+      color: #fff;
+      cursor: pointer;
+      padding: 13px 45px;
+      margin-top: 20px;
+      border: none;
+      border-radius: 20px;
+      box-shadow: 1px 4px 5px rgba(0, 0, 5, .5);
+    }
+    .middle-section{
+      background: hsla(193, 100%, 96%, .5);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .mid-container{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      margin: 100px 75px;
+    }
+    .mid-container img{
+      max-height: 350px;
+    }
+    .mid-container p{
+      opacity: 50%;
+      line-height: 25px;
+      padding: 25px 190px 0px 0px;
+    }
+    .grow{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 50px;
+      margin: 30px 20px;
+      border-radius: 20px;
+      box-shadow: 1px 4px 5px rgba(0, 0, 5, .5);
+    }
+    .grow-text{
+      width: 50%;
+    }
+    .flowing{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 50px;
+      margin: 20px;
+      border-radius: 20px;
+      box-shadow: 1px 4px 5px rgba(0, 0, 5, .5);
+    }
+    .flowing img{
+      margin-left: 75px;
+    }
+    .flowing-text{
+      margin-left: 175px;
+      width: 50%;
+    }
+    .flowing-text p{
+      padding: 25px 50px 50px 0px;
+    }
+    .users{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 50px;
+      margin: 30px 20px;
+      border-radius: 20px;
+      box-shadow: 1px 4px 5px rgba(0, 0, 5, .5);
+    }
+    .users-text{
+      width: 50%;
+    }
+    .users-text p{
+      padding-left: 10px;
+    }
+    .build{
+      background-color: #fff;
+      position: relative;
+      bottom: -150px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      padding: 50px;
+      border-radius: 20px;
+      box-shadow: 1px 4px 5px rgba(0, 0, 5, .5);
+    }
+    .build-btn button{
+      background: var(--Pink);
+      color: #fff;
+      cursor: pointer;
+      padding: 13px 45px;
+      margin-top: 20px;
+      border: none;
+      border-radius: 20px;
+      box-shadow: 1px 4px 5px rgba(0, 0, 5, .5);
+    }
+    .footer{
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: var(--Very-Dark-Cyan);
+      padding: 50px;
+      font-size: .8em;
+    }
+    .footer-container{
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+    }
+    .footer-container p{
+      opacity: 70%;
+    }
+    .footer-container a{
+      opacity: 70%;
+      text-decoration: none;
+      color: #fff;
+    }
+    .footer-container a:hover{
+      text-decoration: underline;
+    }
+    .column1{
+      width: 400px;
+      display: grid;
+      grid-template-columns: .2fr 1.5fr;
+      grid-template-rows: 1fr 1fr 1fr 1fr;
+    }
+    .ftr-logo{
+      grid-column: 1/3;
+    }
+    .ftr-logo img{
+      width: 40%;
+    }
+    .column-img1{
+      grid-row: 2;
+    }
+    .column-img2{
+      grid-row: 3;
+      padding-top: 10px;
+    }
+    .column-img3{
+      grid-row: 4;
+    }
+    .text1{
+      padding-right: 35px;
+    }
+    .text2{
+      grid-column: 2/3;
+      grid-row: 3;
+      padding-top: 10px;
+    }
+    .text3{
+      grid-column: 2/3;
+      grid-row: 4;
+    }
+    .column1 p{
+      margin-bottom: 15px;
+    }
+    .column-text img{
+      margin-right: 15px;
+    }
+    .column2{
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      flex-direction: column;
+      margin-right: 150px;
+      line-height: 40px;
+    }
+    .column3{
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      flex-direction: column;
+      margin-right: 150px;
+      line-height: 40px;
+    }
+    .social-media{
+      margin-bottom: 110px;
+    }
+    .social-media a{
+      opacity: 100%;
+      margin-right: 15px;
+    }
+    #facebook{
+      border: 2px solid #fff;
+      border-radius: 50%;
+      padding: 10px 13px;
+    }
+    #facebook:hover{
+      color: var(--Pink);
+      border: 2px solid var(--Pink);
+    }
+    #twitter{
+      border: 2px solid #fff;
+      padding: 10px;
+      border-radius: 50%;
+    }
+    #twitter:hover{
+      color: var(--Pink);
+      border: 2px solid var(--Pink);
+    }
+    #instagram{
+      border: 2px solid #fff;
+      border-radius: 50%;
+      padding: 10px 12px;
+    }
+    #instagram:hover{
+      color: var(--Pink);
+      border: 2px solid var(--Pink);
+    }
+    .attribution{ 
+      font-size: 11px; 
+      text-align: center; 
+    }
+    .attribution a{ 
+      color: hsl(228, 45%, 44%); 
+    }
+    @media(max-width: 975px){
+      .huddle-main{
+        background-image: url(./img/bg-hero-mobile.svg);
+      }
+      h2{
+        font-size: 1.2em;
+      }
+      .header{
+        padding: 25px 15px;
+      }
+      .hlp-logo img{
+        width: 50%;
+      }
+      .tryIt-btn button{
+        width: 150px;
+        padding: 10px 25px;
+      }
+      .huddle-main-content{
+        flex-direction: column;
+        align-items: center;
+      }
+      .main-text{
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+      }
+      .main-text h1{
+        font-size: 1.5em;
+        margin-top: 25px;
+        padding: 20px 15px;
+      }
+      .main-text p{
+        padding: 0px 50px;
+        margin: 0px 0px 35px 0px;
+        font-size: .8em;
+      }
+      .main-img{
+        display: flex;
+        justify-content: center;
+      }
+      .main-img img{
+        width: 80%;
+        margin-bottom: 5px;
+        padding: 50px 0px 35px 0px;
+      }
+      .get-btn button{
+        padding: 12px 45px;
+        margin-top: 0px;
+      }
+      .middle-section{
+        flex-direction: column;
+        margin: 0px;
+        padding: 0px;
+      }
+      .mid-container{
+        flex-direction: column;
+        margin: 30px 15px;
+      }
+      .mid-container img{
+        max-height: 200px;
+        
+      }
+      .mid-container p{
+        opacity: 50%;
+        line-height: 25px;
+        padding: 25px 0px 0px 0px;
+      }
+      .grow{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        padding: 0px;
+        margin: 20px 0px;
+      }
+      .grow-img{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 45px 0px 0px;
+      }
+      .grow-text{
+        grid-row: 2;
+        text-align: center;
+        width: 100%;
+      }
+      .grow-text p{
+        padding: 0px 20px;
+      }
+      .flowing{
+        flex-direction: column;
+        padding: 0px;
+        margin: 20px 0px 0px 0px;
+        text-align: center;
+      }
+      .flowing img{
+        margin: 45px 0px 50px 0px;
+      }
+      .flowing-text{
+        margin: 0px;
+        width: 100%;
+      }
+      .flowing-text p{
+        padding: 25px 25px 50px 25px;
+      }
+      .users{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        padding: 0px;
+        margin: 40px 0px 0px 0px;
+      }
+      .users-img{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 45px 0px 0px;
+      }
+      .users-text{
+        grid-row: 2;
+        text-align: center;
+        width: 100%;
+      }
+      .users-text p{
+        padding: 20px 40px 0px 40px;
+      }
+      .build{
+        background-color: #fff;
+        position: relative;
+        bottom: -100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 50px 10px;
+        border-radius: 20px;
+        box-shadow: 1px 4px 5px rgba(0, 0, 5, .5);
+      }
+      .build h2{
+        font-size: 1em;
+      }
+      .build-btn button{
+        background: var(--Pink);
+        padding: 12px 45px;
+        margin-top: 40px;
+      }
+      .footer{
+        justify-content: left;
+        padding: 90px 0px 25px 10px;
+      }
+      .footer-container{
+        display: flex;
+        flex-direction: column;
+        justify-content: left;
+        align-items: flex-start;
+      }
+      .footer-container p{
+        opacity: 70%;
+      }
+      .footer-container a{
+        opacity: 70%;
+        text-decoration: none;
+        color: #fff;
+      }
+      .footer-container a:hover{
+        text-decoration: underline;
+      }
+      .column1{
+        max-width: 270px;
+        display: grid;
+        grid-template-columns: .2fr 2fr;
+        grid-template-rows: 1fr 1fr .8fr .5fr;
+      }
+      .ftr-logo{
+        grid-column: 1/3;
+      }
+      .ftr-logo img{
+        width: 75%;
+        margin-top: 45px;
+      }
+      .column-img1{
+        grid-row: 2;
+        margin-top: 20px;
+        padding-right: 20px;
+      }
+      .column-img2{
+        grid-row: 3;
+        padding-top: 30px;
+      }
+      .column-img3{
+        grid-row: 4;
+      }
+      .text1{
+        margin-top: 20px;
+        padding-right: 5px;
+      }
+      .text2{
+        grid-column: 2;
+        grid-row: 3;
+        padding-top: 30px;
+        width: 100%;
+      }
+      .text3{
+        grid-column: 2;
+        grid-row: 4;
+      }
+      .column1 p{
+        margin-bottom: 1px;
+        line-height: 20px;
+      }
+      .column-text img{
+        margin-right: 15px;
+      }
+      .column2{
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-direction: column;
+        margin-right: 0px;
+        line-height: 40px;
+      }
+      .column3{
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-direction: column;
+        margin-right: 0px;
+        line-height: 40px;
+      }
+      .column4{
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      .social-media{
+        display: flex;
+        justify-content: center;
+        margin: 30px 0px;
+      }
+      .social-media a{
+        opacity: 100%;
+        margin-left: 10px;
+      }
+      #facebook{
+        border: 2px solid #fff;
+        border-radius: 50%;
+        padding: 10px 13px;
+      }
+      #facebook:hover{
+        color: var(--Pink);
+        border: 2px solid var(--Pink);
+      }
+      #twitter{
+        border: 2px solid #fff;
+        padding: 10px;
+        border-radius: 50%;
+      }
+      #twitter:hover{
+        color: var(--Pink);
+        border: 2px solid var(--Pink);
+      }
+      #instagram{
+        border: 2px solid #fff;
+        border-radius: 50%;
+        padding: 10px 12px;
+      }
+      #instagram:hover{
+        color: var(--Pink);
+        border: 2px solid var(--Pink);
+      }
+      .attribution{ 
+        font-size: 11px; 
+        text-align: center; 
+      }
+      .attribution a{ 
+        color: hsl(228, 45%, 44%); 
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <div class="huddle-main">
+      <div class="header">
+        <div class="hlp-logo">
+          <img src="./img/hlp-logo.svg" alt="">
+        </div>
+        <div class="tryIt-btn">
+          <button>Try It Free</button>
+        </div>
+      </div>
+      <div class="huddle-main-content">
+        <div class="main-text">
+          <h1>Build The Community Your Fans Will Love</h1>
+          <p>
+            Huddle re-imagines the way we build communities. You have a voice, but so does your audience. 
+            Create connections with your users as you engage in genuine discussion. 
+          </p>
+          <div class="get-btn">
+            <button>Get Started For Free</button>
+          </div>
+        </div>
+        <div class="main-img">
+          <img src="./img/hlp-illustration-mockups.svg" alt="Main image">
+        </div>
+      </div>
+    </div>
+    <div class="middle-section">
+      <div class="mid-container">
+        <div class="grow">
+          <div class="grow-text">
+            <h2>Grow Together</h2>
+            <p>
+              Generate meaningful discussions with your audience and build a strong, loyal community. 
+              Think of the insightful conversations you miss out on with a feedback form. 
+            </p>
+          </div>
+          <div class="grow-img">
+            <img src="./img/illustration-grow-together.svg" alt="Grow Together">
+          </div>
+        </div>
+        <div class="flowing">
+          <div class="flowing-img">
+            <img src="./img/illustration-flowing-conversation.svg" alt="Flowing Conversations">
+          </div>
+          <div class="flowing-text">
+            <h2>Flowing Conversations</h2>
+            <p>
+              You wouldn't paginate a conversation in real life, so why do it online? Our threads 
+              have just-in-time loading for a more natural flow.
+            </p>
+          </div>
+        </div>
+        <div class="users">
+          <div class="users-text">
+            <h2>Your Users</h2>
+            <p>
+              It takes no time at all to integrate Huddle with your app's authentication solution. 
+              This means, once signed in to your app, your users can start chatting immediately.
+            </p>
+          </div>
+          <div class="users-img">
+            <img src="./img/illustration-your-users.svg" alt="your users">
+          </div>
+        </div>
+        <div class="build">
+          <div class="build-text">
+            <h2>Ready To Build Your Community?</h2>
+          </div>
+          <div class="build-btn">
+            <button>Get Started For Free</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="footer-container">
+        <div class="column1">
+          <div class="ftr-logo">
+            <img src="./img/ftr.logo.svg" alt="">
+          </div>
+          <div class="column-img1">
+            <img src="./img/icon-location.svg" alt="">
+          </div>
+          <div class="column-img2">
+            <img src="./img/icon-phone.svg" alt="">
+          </div>
+          <div class="column-img3">
+            <img src="./img/icon-email.svg" alt="">
+          </div>
+            <div class="text1">
+              <p> 
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+              incididunt ut labore et dolore magna aliqua
+            </p>
+            </div>
+            <div class="text2">
+              <p>+1-543-123-4567</p>
+            </div>
+            <div class="text3">
+              <p>example@huddle.com</p>
+            </div>
+        </div>
+        <div class="column2">
+          <a href="">About Us</a>
+          <a href="">What We Do</a>
+          <a href="">FAQ</a>
+        </div>
+        <div class="column3">
+          <a href="">Career</a>
+          <a href="">Blog</a>
+          <a href="">Contact Us</a>
+        </div>
+        <div class="column4">
+          <div class="social-media">
+            <a href=""><i id="facebook" class="fab fa-facebook-f"></i></a>
+            <a href=""><i id="twitter" class="fab fa-twitter"></i></a>
+            <a href=""><i id="instagram" class="fab fa-instagram"></i></a>
+          </div>
+          <p>&copy; Copyright 2018 Huddle. All rights reserved.</p>
+        </div>
+      </div>
+    </div> 
+    <footer>
+      <p class="attribution">
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+        Coded by <a href="https://jacram.github.io/">James Matthews</a>.
+      </p>
+    </footer>
+  </main>
+</body>
+</html>
