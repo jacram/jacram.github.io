@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="./img/favicon-32x32.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>Frontend Mentor | Fylo landing page with two column layout</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 
+       font-family: 'Raleway', sans-serif; 400&700-->
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    :root{
+      --Very-Dark-Blue: hsl(243, 87%, 12%);
+      --Desaturated-Blue: hsl(238, 22%, 44%);
+      --Bright-Blue: hsl(224, 93%, 58%);
+      --Light-Blue-Gray-button: hsla(224, 93%, 78%, .9);
+      --Moderate-Cyan: hsl(170, 45%, 43%);
+      --Light-Grayish-Blue: hsl(240, 75%, 98%);
+      --Light-Gray: hsl(0, 0%, 75%);
+    }
+    .container{
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 400;
+    }
+    .header{
+      display: flex;
+      justify-content: space-between;
+      padding: 50px;
+    }
+    .header a{
+      font-family: 'Raleway', sans-serif;
+      font-weight: 700;
+      text-decoration: none;
+      padding-left: 35px;
+    }
+    .your-files{
+      display: flex;
+      padding: 0px 50px 0px 50px;
+    }
+    .your-files h1{
+      font-family: 'Raleway', sans-serif;
+      padding: 50px 100px 25px 0px;
+    }
+    .your-files p{
+      padding: 0px 90px 25px 0px;
+    }
+    .email-input{
+      display: flex;
+    }
+    .email-input input{
+      padding: 7px 75px 5px 10px;
+      text-align: left;
+    }
+    .email-input p{
+      font-size: .8em;
+      padding-bottom: 15px;
+    }
+    .email-input button{
+      font-family: 'Raleway', sans-serif;
+      font-size: .7em;
+      border: none;
+      border-radius: 2px;
+      padding: 10px 50px;
+      margin-left: 15px;
+      color: #fff;
+      background-color: var(--Bright-Blue);
+      cursor: pointer;
+    }
+    .email-input button:hover{
+      background-color: var(--Light-Blue-Gray-button);
+    }
+    .your-files-img{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-bottom: 100px;
+    }
+    .your-files-img img{
+      width: 80%;
+    }
+    .curved-bg{
+      background-image: url(./img/bg-curve-desktop.svg);
+      height: 114px;
+    }
+    .stay-productive{
+      background: var(--Light-Grayish-Blue);
+      display: flex;
+      padding: 20px 50px 50px 50px;
+    }
+    .stay-productive h1{
+      width: 550px;
+      font-family: 'Raleway', sans-serif;
+      margin-bottom: 30px;
+    }
+    .stay-productive p{
+      font-size: .8em;
+      margin-bottom: 15px;
+      padding-right: 125px;
+    }
+    .stay-productive a{
+      color: var(--Moderate-Cyan);
+      text-decoration: none;
+      border-bottom: 2px solid var(--Moderate-Cyan);
+    }
+    .stay-productive a:hover{
+      color: hsla(170, 45%, 43%, .5);
+      border-bottom: 2px solid hsla(170, 45%, 43%, .5);
+    }
+    svg:hover use{
+      fill: hsla(170, 45%, 43%, .5);
+    }
+    .quote-profile{
+      margin: 50px 0px;
+      box-shadow: 2px 2px 10px rgba(0, 0, 5, .5);
+      border-radius: 5px;
+      padding: 25px;
+      width: 250px;
+    }
+    .quote-profile p{
+      font-size: .7em;
+      line-height: 1.7em;
+      padding-right: 15px;
+    }
+    .burton-profile{
+      display: flex;
+      flex-direction: row;
+      padding-top: 15px;
+    }
+    .burton-profile p{
+      font-size: .6em;
+    }
+    .burton-img{
+      padding-right: 15px;
+    }
+    .burton-img img{
+      width: 35px;
+      border-radius: 50%;
+    }
+    .stay-productive-img{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-bottom: 100px;
+    }
+    .stay-productive-img img{
+      width: 80%;
+    }
+    .ftr-header{
+      color: #fff;
+      background: var(--Desaturated-Blue);
+      padding: 50px;
+    }
+    .early-access{
+      max-width: 50%;
+      padding: 10px 105px 0px 0px;
+      
+    }
+    .early-access h2{
+      font-family: 'Raleway', sans-serif;
+    }
+    .early-access p{
+      max-width: 445px;
+      font-size: .9em;
+      padding: 25px 0px;
+    }
+    .get-started{
+      padding: 10px 150px 0px 0px;
+    }
+    .get-started input{
+      width: 100%;
+      padding: 10px 50px 10px 10px;
+      text-align: left;
+    }
+    .get-started p{
+      font-size: .8em;
+      padding-bottom: 15px;
+    }
+    .get-started button{
+      font-family: 'Raleway', sans-serif;
+      border: none;
+      border-radius: 2px;
+      padding: 10px 40px;
+      color: #fff;
+      background-color: var(--Bright-Blue);
+      cursor: pointer;
+    }
+    .get-started button:hover{
+      background-color: var(--Light-Blue-Gray-button);
+    }
+    .footer{
+      color: #fff;
+    }
+    .ftr-header-container{
+      display: flex;
+    }
+    .footer-container{
+      background: var(--Very-Dark-Blue);
+      padding: 75px 50px;
+    }
+    .ftr-logo{
+      padding-bottom: 50px;
+    }
+    .ftr-columns{
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+    .footer-container a{
+      text-decoration: none;
+      color: #fff;
+      padding-bottom: 20px;
+    }
+    .ftr-col1{
+      grid-column: 1;
+      display: grid;
+      grid-template-columns: .2fr 1fr;
+      grid-template-rows: .25fr .3fr;
+    }
+    .phone-img{
+      grid-column: 1;
+      grid-row: 1;
+    }
+    .phone{
+      grid-column: 2;
+      grid-row: 1;
+    }
+    .ftr-col2{
+      grid-column: 2;
+      display: flex;
+      flex-direction: column;
+    }
+    .ftr-col3{
+      grid-column: 3;
+      display: flex;
+      flex-direction: column;
+    }
+    .ftr-col4{
+      grid-column: 4;
+    }
+    #facebook{
+      border: 2px solid #fff;
+      border-radius: 50%;
+      padding: 5px 8px;
+    }
+    #twitter{
+      border: 2px solid #fff;
+      border-radius: 50%;
+      padding: 5px 5px;
+      margin: 0px 15px;
+    }
+    #instagram{
+      border: 2px solid #fff;
+      border-radius: 50%;
+      padding: 5px 6px;
+    }
+    #facebook:hover{
+      color: var(--Light-Blue-Gray-button);
+      border: 2px solid var(--Light-Blue-Gray-button);
+    }
+    #twitter:hover{
+      color: var(--Light-Blue-Gray-button);
+      border: 2px solid var(--Light-Blue-Gray-button);
+    }
+    #instagram:hover{
+      color: var(--Light-Blue-Gray-button);
+      border: 2px solid var(--Light-Blue-Gray-button);
+    }
+    @media(max-width: 1000px){
+      .header{
+        display: flex;
+        justify-content: space-evenly;
+        padding: 50px 10px 25px 10px;
+      }
+      .hdr-logo img{
+        width: 50%;
+      }
+      .header a{
+        padding-left: 10px;
+        font-size: .8em;
+      }
+      .your-files{
+        background: #fff;
+        display: grid;
+        flex-direction: column;
+        padding: 0px;
+        text-align: center;
+      }
+      .your-files-text{
+        grid-row: 2;
+        padding: 0px 20px;
+      }
+      .your-files h1{
+        font-size: 1.6em;
+        padding: 50px 0px 25px 0px;
+      }
+      .your-files p{
+        font-size: .9em;
+        padding: 0px 20px 25px 20px;
+      }
+      .email-input{
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+      }
+      .email-input input{
+        width: 70%;
+        padding: 7px 80px 5px 10px;
+        text-align: left;
+      }
+      .email-input p{
+        font-size: .3em;
+        padding-bottom: 0px;
+        opacity: 0%;
+      }
+      .email-input button{
+        width: 100%;
+        margin-left: 0px;
+        margin-bottom: 100px;
+      }
+      .your-files-img{
+        padding: 60px 5px 10px 5px;
+      }
+      .your-files-img img{
+        width: 90%;
+      }
+      .curved-bg{
+        background-image: url(./img/bg-curve-mobile.svg);
+        background-repeat: no-repeat;
+        height: 53px;
+      }
+      .stay-productive{
+        background: var(--Light-Grayish-Blue);
+        display: grid;
+        grid-template-columns: 1fr;
+        padding: 20px 10px 50px 10px;
+      }
+      .stay-productive h1{
+        font-size: 1.1em;
+        width: 100%;
+        text-align: center;
+      }
+      .stay-productive p{
+        text-align: left;
+        font-size: .9em;
+        margin-bottom: 15px;
+        padding: 0px 15px 10px 10px;
+      }
+      .stay-productive a{
+        margin-left: 25%;
+      }
+      .quote-profile{
+        margin: 50px 20px;
+        box-shadow: 2px 2px 10px rgba(0, 0, 5, .5);
+        border-radius: 5px;
+        padding: 10px 25px;
+        width: 75%;
+      }
+      .quote-profile p{
+        font-size: .8em;
+        line-height: 1.7em;
+        padding: 0px;
+      }
+      .stay-productive-img{
+        grid-row: 1;
+        padding: 10px 20px 50px 20px;
+      }
+      .stay-productive-img img{
+        width: 100%;
+      }
+      .ftr-header{
+        color: #fff;
+        background: var(--Desaturated-Blue);
+        padding: 50px 30px;
+      }
+      .early-access{
+        max-width: 100%;
+        padding: 10px;
+        text-align: center;
+      }
+      .early-access h2{
+        font-family: 'Raleway', sans-serif;
+      }
+      .early-access p{
+        max-width: 100%;
+        font-size: .9em;
+        padding: 25px 0px 20px 0px;
+      }
+      .get-started{
+        padding: 0px 40px;
+      }
+      .get-started input{
+        width: 210px;
+        padding: 10px 2px 10px 10px;
+        text-align: left;
+      }
+      .get-started p{
+        font-size: .4em;
+        padding-bottom: 0px;
+        opacity: 0%;
+      }
+      .get-started button{
+        width: 225px;
+        padding: 11px 20px;
+      }
+      .ftr-header-container{
+        display: flex;
+        flex-direction: column;
+      }
+      .footer-container{
+        padding: 75px 40px 0px 40px;
+      }
+      .ftr-columns{
+        grid-template-columns: 1fr;
+        grid-template-rows: .7fr 1fr 1fr .5fr;
+      }
+      .ftr-col1{
+        grid-column: 1;
+        grid-row: 1;
+        display: grid;
+        grid-template-columns: .05fr 1fr;
+        grid-template-rows: .4fr .1fr;
+      }
+      .phone-img{
+        grid-column: 1;
+        grid-row: 1;
+      }
+      .phone{
+        grid-column: 2;
+        grid-row: 1;
+      }
+      .ftr-col2{
+        grid-column: 1;
+        grid-row: 2;
+        margin-bottom: 30px;
+      }
+      .ftr-col3{
+        grid-column: 1;
+        grid-row: 3;
+      }
+      .ftr-col4{
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        grid-column: 1;
+        grid-row: 4;
+      }
+    }
+    .attribution{ 
+      font-size: 11px; 
+      text-align: center; 
+    }
+    .attribution a{ 
+      color: hsl(228, 45%, 44%);
+    }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <div class="header">
+      <div class="hdr-logo">
+        <img src="./img/fylo-hdr-logo.svg" alt="">
+      </div>
+      <div class="links">
+        <a href="">Features</a>
+        <a href="">Team</a>
+        <a href="">Sign In</a>
+      </div>
+    </div>
+    <div class="your-files">
+      <div class="your-files-text">
+        <h1>All your files in one secure location, accessible anywhere.</h1>
+        <p>
+          Fylo stores your most important files in one secure location. 
+          Access them wherever you need, share and collaborate with friends, 
+          family, and co-workers.
+        </p>
+        <div class="email-input">
+          <div class="input">
+            <input type="email" placeholder="johnappleseed@mail.com">
+            <p>Please check your email</p>
+          </div>
+          <div class="btn">
+            <button>Get Started</button>
+          </div>
+        </div>
+      </div>
+      <div class="your-files-img">
+        <img src="./img/illustration-1.svg" alt="">
+      </div>
+    </div>
+    <div class="curved-bg"></div>
+    <div class="stay-productive">
+      <div class="stay-productive-text">
+        <h1>Stay productive, wherever you are</h1>
+        <p>
+          Never let location be an issue when accessing your files. Fylo has you 
+          covered for all of your file storage needs.
+        </p>
+        <p>
+          Securely share files and folders with friends, family and colleagues for 
+          live collaboration. No email attachments required!
+        </p>
+        <div id="fylo-works">
+          <a href="">See how Fylo works <svg width="16" height="16" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><circle id="b" cx="6" cy="6" r="6"/><filter x="-25%" y="-25%" width="150%" height="150%" filterUnits="objectBoundingBox" id="a"><feOffset in="SourceAlpha" result="shadowOffsetOuter1"/><feGaussianBlur stdDeviation="1" in="shadowOffsetOuter1" result="shadowBlurOuter1"/><feColorMatrix values="0 0 0 0 0.239215686 0 0 0 0 0.62745098 0 0 0 0 0.560784314 0 0 0 0.793506567 0" in="shadowBlurOuter1"/></filter></defs><g fill="none" fill-rule="evenodd"><g transform="translate(2 2)"><use fill="#000" filter="url(#a)" xlink:href="#b"/><use fill="#3DA08F" xlink:href="#b"/></g><path d="M8.582 6l-.363.35 1.452 1.4H5.333v.5h4.338L8.22 9.65l.363.35 2.074-2z" fill="#FFF"/></g></svg></a>
+        </div>
+        <div class="quote-profile">
+          <i><img src="./img/icon-quotes.svg" alt=""></i>
+          <p>Fylo has improved our team productivity by an order of magnitude. Since 
+            making the switch our team has become a well-oiled collaboration machine.</p>
+          <div class="burton-profile">
+            <div class="burton-img">
+              <img src="./img/avatar-testimonial.jpg" alt="">
+            </div>
+            <div>  
+              <h5>Kyle Burton</h5>
+              <p>Founder & CEO, Huddle</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="stay-productive-img">
+        <img src="./img/illustration-2.svg" alt="">
+      </div>
+    </div>     
+    <div class="ftr-header">
+      <div class="ftr-header-container">
+        <div class="early-access">
+          <h2>Get early access today</h2>
+          <p>
+            It only takes a minute to sign up and our free starter tier is extremely generous. 
+            If you have any questions, our support team would be happy to help you.
+          </p>
+        </div>
+        <div class="get-started">
+          <div class="input">
+            <input type="email" placeholder="johnappleseed@mail.com">
+            <p>Please check your email</p>
+          </div>
+          <div class="btn">
+            <button>Get Started For Free</button>
+          </div>
+        </div>
+      </div>
+    </div>      
+    <div class="footer">
+      <div class="footer-container">
+        <div class="ftr-logo">
+          <img src="./img/fylo-ftr-logo.svg" alt="">
+        </div>
+        <div class="ftr-columns">
+          <div class="ftr-col1">
+            <div class="phone-img">
+              <img src="./img/icon-phone.svg" alt="Phone">
+            </div>
+            <div class="email-img">
+              <img src="./img/icon-email.svg" alt="">
+            </div>
+            <div class="phone">
+              <p>Phone: +1-543-123-4567</p>
+            </div>
+            <div class="email">
+              <p>example@fylo.com</p>
+            </div>
+          </div>
+          <div class="ftr-col2">
+            <a href="">About Us</a><a href="">Jobs</a><a href="">Press</a><a href="">Blog</a>
+          </div>
+          <div class="ftr-col3">
+            <a href="">Contact Us</a><a href="">Terms</a><a href="">Privacy</a>
+          </div>
+          <div class="ftr-col4">
+            <div class="social-media">
+              <a href=""><i id="facebook" class="fab fa-facebook-f"></i></a>
+              <a href=""><i id="twitter" class="fab fa-twitter"></i></a>
+              <a href=""><i id="instagram" class="fab fa-instagram"></i></a>
+            </div>
+          </div>
+        </div> 
+      </div>
+    </div>
+    <footer>
+      <p class="attribution">
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+        Coded by <a href="https://jacram.github.io/">James Matthews</a>.
+      </p>
+    </footer>
+  </main>
+</body>
+</html>
