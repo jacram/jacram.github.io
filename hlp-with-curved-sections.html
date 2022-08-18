@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;1,700&family=Poppins:wght@700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>Frontend Mentor | Huddle landing page with curved sections</title>
+
+  <!-- font-family: 'Open Sans', sans-serif;
+font-family: 'Poppins', sans-serif;
+    Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    :root{
+      --Pink: hsl(322, 100%, 66%);
+      --Light-Pink: hsl(321, 100%, 78%);
+      --Light-Red: hsl(0, 100%, 63%);
+
+      --Very-Dark-Cyan: hsl(192, 100%, 9%);
+      --Very-Pale-Blue: hsl(207, 100%, 98%);
+      --heading-fonts: "Poppins", sans-serif;
+      --body-fonts: "Open Sans", sans-serif;
+    }
+    body{
+      font-family: var(--body-fonts);
+      font-weight: 400;
+    }
+    .header{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 50px;
+    }
+    .hdr-btn button{
+      padding: 10px 45px;
+      background: #fff;
+      color: var(--Pink);
+      border: 1px solid var(--Pink);
+      border-radius: 20px;
+    }
+    .build-community{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      margin-top: 50px;
+    }
+    .build-text{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+    .build-community h1{
+      font-family: var(--heading-fonts);
+      margin: 50px 0px 20px 0px;
+      font-size: 2.5em;
+    }
+    .build-community p{
+      width: 475px;
+    }
+    .get-started-btn button{
+      color: #fff;
+      background: var(--Pink);
+      padding: 15px 65px;
+      margin: 40px 0px 100px 0px;
+      cursor: pointer;
+      border: none;
+      border-radius: 25px;
+      box-shadow: 1px 4px 5px rgba(0, 0, 5, .5);
+    }
+    .build-img img{
+      width: 90%;
+    }
+    .stats{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 100px 200px;
+    }
+    .communities h1{
+      font-size: 4.5em;
+      font-weight: 700;
+    }
+    .messages h1{
+      font-size: 4.5em;
+      font-weight: 700;
+    }
+    .bg-top1{
+      height: 165px;
+      background: url(./img/bg-section-top-desktop-1.svg);
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    .grow-together{
+      display: flex;
+      background: var(--Very-Pale-Blue);
+      padding: 100px;
+    }
+    .grow-text{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      max-width: 700px;
+    }
+    .grow-text h1{
+      font-family: var(--heading-fonts);
+      margin-bottom: 25px;
+    }
+    .grow-text p{
+      width: 75%;
+      margin-bottom: 5px;
+    }
+    .grow-img img{
+      max-width: 100%;
+    }
+    .bg-bottom1{
+      height: 139px;
+      background: url(./img/bg-section-bottom-desktop-1.svg);
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    .flowing-coversations{
+      display: flex;
+      padding: 100px;
+    }
+    .flowing-img{
+      padding: 10px 100px 10px 10px;
+    }
+    .flowing-img img{
+      max-width: 100%;
+    }
+    .flowing-text{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      max-width: 700px;
+    }
+    .flowing-text h1{
+      font-family: var(--heading-fonts);
+      margin-bottom: 25px;
+    }
+    .flowing-text p{
+      width: 100%;
+      margin-bottom: 5px;
+    }
+    .bg-top2{
+      height: 156px;
+      background: url(./img/bg-section-top-desktop-2.svg);
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    .your-users{
+      display: flex;
+      background: var(--Very-Pale-Blue);
+      padding: 100px;
+    }
+    .users-text{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      max-width: 700px;
+    }
+    .users-text h1{
+      font-family: var(--heading-fonts);
+      margin-bottom: 25px;
+    }
+    .users-text p{
+      width: 75%;
+      margin-bottom: 5px;
+    }
+    .users-img img{
+      max-width: 100%;
+    }
+    .bg-bottom2{
+      height: 139px;
+      background: url(./img/bg-section-bottom-desktop-2.svg);
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    .ready-to-build{
+      font-family: var(--heading-fonts);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 125px;
+    }
+    .ftr-bg{
+      background: url(./img/bg-footer-top-desktop.svg);
+      background-size: cover;
+      height: 156px;
+    }
+    .footer{
+      display: flex;
+      justify-content: space-between;
+      background: var(--Very-Dark-Cyan);
+      color: var(--Very-Pale-Blue);
+      padding: 100px;
+    }
+    .footer p{
+      opacity: 90%;
+    }
+    .ftr-logo{
+      padding-bottom: 25px;
+    }
+    .col1-row2{
+      width: 350px;
+      line-height: 1.5em;
+      padding-bottom: 25px;
+    }
+    .col1-row3{
+      display: flex;
+      padding-bottom: 25px;
+    }
+    .phone-img{
+      padding-right: 20px;
+    }
+    .col1-row4{
+      display: flex;
+      padding-bottom: 25px;
+    }
+    .mail-img{
+      padding-right: 20px;
+    }
+    .social-media{
+      display: flex;
+      align-items: center;
+    }
+    .social-media a{
+      margin-right: 15px;
+    }
+    #facebook{
+      background: var(--Very-Pale-Blue);
+      padding: 2px 2px 2px 7px;
+      border-radius: 3px;
+    }
+    #facebook:hover{
+      background: hsl(207, 100%, 78%);
+    }
+    #instagram{
+      color: var(--Very-Pale-Blue);
+      font-size: 1.5em;
+      margin-top: 2px;
+    }
+    #instagram:hover{
+      color: hsl(207, 100%, 78%);
+    }
+    #twitter{
+      background: var(--Very-Pale-Blue);
+      padding: 2px 2px 2px 2px;
+      border-radius: 3px;
+    }
+    #twitter:hover{
+      background: hsl(207, 100%, 78%);
+    }
+    .col2-row1{
+      margin-top: 10px;
+      margin-bottom: 25px;
+    }
+    .col2-row1 h3{
+      text-transform: uppercase;
+    }
+    .col2-row2{
+      width: 375px;
+      line-height: 1.5em;
+      padding-bottom: 25px;
+    }
+    .col2-row3{
+      display: flex;
+    }
+    .col2-row3 input{
+      padding: 15px 90px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .col2-row3 button{
+      margin-left: 40px;
+      padding: 16px 50px;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+      color: #fff;
+      background: var(--Pink);
+    }
+    @media(max-width: 1050px){
+      .header{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 50px;
+      }
+      .hdr-btn button{
+        padding: 10px 45px;
+        background: #fff;
+        color: var(--Pink);
+        border: 1px solid var(--Pink);
+        border-radius: 20px;
+      }
+      .build-community{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        margin-top: 50px;
+      }
+      .build-text{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+      .build-community h1{
+        font-family: var(--heading-fonts);
+        margin: 50px 0px 20px 0px;
+        font-size: 2em;
+      }
+      .build-community p{
+        width: 475px;
+      }
+      .get-started-btn button{
+        color: #fff;
+        background: var(--Pink);
+        padding: 15px 65px;
+        margin: 40px 0px 100px 0px;
+        border: none;
+        border-radius: 25px;
+      }
+      .build-img img{
+        width: 80%;
+        margin-bottom: 100px;
+      }
+      .stats{
+        justify-content: center;
+        flex-direction: column;
+        margin: 10px 20px;
+      }
+      .communities p{
+        text-align: center;
+      }
+      .messages{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        margin-top: 100px;
+      }
+      .messages p{
+        width: 75px;
+        margin-left: 50px;
+        text-align: center;
+      }
+      .bg-top1{
+        height: 165px;
+        background: url(./img/bg-section-top-desktop-1.svg);
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+      .grow-together{
+        display: grid;
+        background: var(--Very-Pale-Blue);
+        padding: 50px;
+      }
+      .grow-text{
+        grid-row: 2;
+        align-items: center;
+        max-width: 700px;
+        text-align: center;
+      }
+      .grow-text h1{
+        font-family: var(--heading-fonts);
+        margin-bottom: 25px;
+      }
+      .grow-text p{
+        width: 75%;
+        margin-bottom: 5px;
+      }
+      .grow-img img{
+        grid-row: 1;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 75px;
+      }
+      .bg-bottom1{
+        height: 139px;
+        background: url(./img/bg-section-bottom-desktop-1.svg);
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+      .flowing-coversations{
+        display: flex;
+        flex-direction: column;
+        padding: 50px;
+      }
+      .flowing-img{
+        padding: 10px;
+      }
+      .flowing-img img{
+        display: flex;
+        justify-content: center;
+        margin-bottom: 75px;
+      }
+      .flowing-text{
+        text-align: center;
+      }
+      .flowing-text h1{
+        font-family: var(--heading-fonts);
+        margin-bottom: 25px;
+      }
+      .flowing-text p{
+        width: 100%;
+        margin-bottom: 5px;
+      }
+      .bg-top2{
+        height: 156px;
+        background: url(./img/bg-section-top-desktop-2.svg);
+      }
+      .your-users{
+        display: grid;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+      }
+      .users-text{
+        display: flex;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        max-width: 700px;
+      }
+      .users-text h1{
+        font-family: var(--heading-fonts);
+        margin-bottom: 25px;
+      }
+      .users-text p{
+        width: 80%;
+        margin-bottom: 5px;
+      }
+      .users-img{
+        grid-row: 1;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 75px;
+      }
+      .users-img img{
+        max-width: 80%;
+      }
+      .bg-bottom2{
+        height: 139px;
+        background: url(./img/bg-section-bottom-desktop-2.svg);
+      }
+      .ready-to-build{
+        justify-content: center;
+        align-items: center;
+        padding: 25px;
+        text-align: center;
+      }
+      .ftr-bg{
+        background: url(./img/bg-footer-top-desktop.svg);
+        background-size: cover;
+        height: 156px;
+      }
+      .footer{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        justify-content: space-between;
+        padding: 50px;
+      }
+      .footer-col2{
+        grid-row: 1;
+        margin-bottom: 100px;
+      }
+      .col2-row2{
+        width: 350px;
+        line-height: 1.5em;
+        padding-bottom: 25px;
+      }
+      .col2-row3{
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: flex-end;
+      }
+      .col2-row3 input{
+        margin-bottom: 15px;
+      }
+    }
+    @media(max-width: 550px){
+      .header{
+        padding: 20px;
+      }
+      .hdr-logo{
+        width: 50%;
+      }
+      .hdr-logo img{
+        width: 70%;
+      }
+      .hdr-btn button{
+        padding: 5px 25px;
+      }
+      .build-community{
+        margin-top: 75px;
+        padding: 20px;
+      }
+      .build-text{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 0px;
+      }
+      .build-community h1{
+        margin: 0px 0px 25px 0px;
+        font-size: 1.6em;
+      }
+      .build-community p{
+        max-width: 325px;
+        font-size: .9em;
+      }
+      .bg-top1{
+        height: 112px;
+        background: url(./img/bg-section-top-mobile-1.svg);
+      }
+      .grow-together{
+        padding: 75px 20px 20px 20px;
+      }
+      .grow-text{
+        text-align: center;
+      }
+      .grow-text h1{
+        margin-bottom: 25px;
+      }
+      .grow-text p{
+        width: 100%;
+        font-size: .91em;
+        margin-bottom: 50px;
+      }
+      .grow-img img{
+        margin-bottom: 75px;
+      }
+      .bg-bottom1{
+        height: 52px;
+        background: url(./img/bg-section-bottom-mobile-1.svg);
+      }
+      .flowing-coversations{
+        padding: 20px;
+        margin-top: 100px;
+      }
+      .flowing-text{
+        text-align: center;
+      }
+      .flowing-text h1{
+        margin-bottom: 25px;
+        font-size: 1.5em;
+      }
+      .flowing-text p{
+        width: 97%;
+        font-size: .9em;
+        margin-bottom: 75px;
+      }
+      .bg-top2{
+        height: 103px;
+        background: url(./img/bg-section-top-mobile-2.svg);
+      }
+      .your-users{
+        padding: 20px;
+      }
+      .users-text{
+        text-align: center;
+      }
+      .users-text h1{
+        margin-bottom: 25px;
+      }
+      .users-text p{
+        width: 100%;
+        padding: 0px 5px;
+        margin-bottom: 75px;
+        font-size: .9em;
+      }
+      .users-img img{
+        max-width: 90%;
+        margin-top: 20px;
+      }
+      .bg-bottom2{
+        height: 101px;
+        background: url(./img/bg-section-bottom-mobile-2.svg);
+      }
+      .ready-to-build{
+        padding: 20px;
+        margin: 75px 0px 100px 0px;
+      }
+      .ftr-bg{
+        background: url(./img/bg-footer-top-mobile.svg);
+        height: 52px;
+        background-size: cover;
+      }
+      .footer{
+        display: grid;
+        min-width: 325px;
+        justify-content: space-between;
+        padding: 20px;
+      }
+      .footer-col1{
+        width: 325px;
+      }
+      .col1-row1{
+        width: 325px;
+      }
+      .col1-row2{
+        width: 325px;
+        font-size: .95em;
+      }
+      .ftr-logo{
+        width: 325px;
+      }
+      .col2-row1{
+        width: 325px;
+      }
+      .col2-row2{
+        width: 325px;
+        padding-bottom: 25px;
+        font-size: .95em;
+      }
+      .col2-row3{
+        width: 325px;
+        padding: 0;
+        margin: 0;
+      }
+      .col2-row3 input{
+        padding: 15px 80px;
+        margin-bottom: 15px;
+      }
+      .social-media{
+        margin: 20px 0px;
+      }
+    }
+    .attribution{ 
+      font-size: 11px; 
+      text-align: center; 
+    }
+    .attribution a{ 
+      color: hsl(228, 45%, 44%); 
+    }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <div class="header">
+      <div class="hdr-logo">
+        <img src="./img/huddle-logo.svg" alt="">
+      </div>
+      <div class="hdr-btn">
+        <button>Try it free</button>
+      </div>
+    </div>
+    <div class="build-community">
+      <div class="build-text">
+        <h1>Build The Community Your Fans Will Love</h1>
+        <p>
+          Huddle re-imagines the way we build communities. You have a voice, but so does 
+          your audience. Create connections with your users as you engage in genuine discussion. 
+        </p>
+        <div class="get-started-btn">
+          <button>Get Started For Free</button>
+        </div>
+      </div>
+      <div class="build-img">
+        <img src="./img/screen-mockups.svg" alt="">
+      </div>
+    </div>
+    <div class="stats">
+      <div class="communities">
+        <div class="communities-icon">
+          <i><img src="./img/icon-communities.svg" alt=""></i>
+        </div>
+        <div class="communties-stats">  
+          <h1>1.4k+</h1>
+          <p>Communities Formed</p>
+        </div>
+      </div>
+      <div class="messages">
+        <div class="messages-icon">
+          <i><img src="./img/icon-messages.svg" alt=""></i>
+        </div>
+        <div class="messages-stats">
+          <h1>2.7m+</h1>
+          <p>Messages Sent</p>
+        </div>
+      </div>
+    </div>
+    <div class="bg-top1"></div>
+    <div class="grow-together">
+      <div class="grow-text">
+        <h1>Grow Together</h1>
+        <p>
+          Generate meaningful discussions with your audience and build a strong, loyal community. 
+          Think of the insightful conversations you miss out on with a feedback form. 
+        </p>
+      </div>
+      <div class="grow-img">
+        <img src="./img/illustration-grow-together.svg" alt="">
+      </div>
+    </div>
+    <div class="bg-bottom1"></div>
+     <div class="flowing-coversations">
+      <div class="flowing-img">
+        <img src="./img/illustration-flowing-conversation.svg" alt="">
+      </div>
+     <div class="flowing-text">
+        <h1>Flowing Conversations</h1>
+        <p>
+          You wouldn't paginate a conversation in real life, so why do it online? Our threads have 
+          just-in-time loading for a more natural flow.
+        </p>
+      </div>
+    </div>
+    <div class="bg-top2"></div>
+    <div class="your-users">
+      <div class="users-text">
+        <h1>Your Users</h1>
+        <p>It takes no time at all to integrate Huddle with your app's authentication solution. This means, 
+        once signed in to your app, your users can start chatting immediately.</p>
+      </div>
+      <div class="users-img">
+        <img src="./img/illustration-your-users.svg" alt="">
+      </div>
+    </div>
+    <div class="bg-bottom2"></div>
+    <div class="ready-to-build">
+      <h1>Ready To Build Your Community?</h1>
+      <div class="get-started-btn">
+        <button>Get Started For Free</button>
+      </div>
+    </div>
+    <div class="ftr-bg"></div>
+    <div class="footer">
+      <div class="footer-col1">
+        <div class="ftr-logo">
+          <img src="./img/hlp-ftr-logo.svg" alt="">
+        </div>
+        <div class="col1-row2">
+          <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nulla quam, hendrerit lacinia 
+          vestibulum a, ultrices quis sem.
+        </p>
+        </div>
+        <div class="col1-row3">
+          <div class="phone-img">
+            <img src="./img/icon-phone.svg" alt="">
+          </div>
+          <div class="phone-text">
+            <p>Phone: +1-543-123-4567</p>
+          </div>
+        </div>
+        <div class="col1-row4">
+          <div class="mail-img">
+            <img src="./img/icon-email.svg" alt="">
+          </div>
+          <div class="mail-text">
+            <p>example@huddle.com</p>
+          </div>
+        </div>
+        <div class="social-media">
+          <a href=""><i id="facebook" class="fab fa-facebook-f"></i></a>
+          <a href=""><i id="instagram" class="fab fa-instagram"></i></a>
+          <a href=""><i id="twitter" class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+      <div class="footer-col2">
+        <div class="col2-row1">
+          <h3>Newsletter</h3>
+        </div>
+        <div class="col2-row2">
+          <p>
+            To recieve tips on how to grow your community, sign up to our weekly newsletter. We’ll never 
+            send you spam or pass on your email address
+          </p>
+        </div>
+        <div class="col2-row3">
+          <div class="input">
+            <input type="text">
+          </div>
+          <div class="subscribe-btn">
+            <button>Subscribe</button>
+          </div>
+        </div>
+      </div>
+      </div>
+    <footer>
+      <p class="attribution">
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+        Coded by <a href="https://jacram.github.io/">James Matthews</a>.
+      </p>
+    </footer>
+  </main>
+</body>
+</html>
