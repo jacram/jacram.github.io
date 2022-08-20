@@ -16,8 +16,6 @@
         }
         .container{
             background: transparent;
-            height: 98vh;
-            width: 99%;
         }
         .header{
             display: flex;
@@ -42,15 +40,14 @@
         }
         .content{
             background: transparent;
-            width: 1000px;
             display: flex;
             justify-content: space-between;
             flex-wrap: wrap;
         }
         ul{
-            position: absolute;
             display: flex;
             justify-content: center;
+            align-items: center;
             flex-wrap: wrap;
             width: 100%;
             background: transparent;
@@ -82,6 +79,97 @@
         }
         img{
             width: 400px;
+        } 
+
+        /*button*/
+        .btn-container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .btn-container .btn{
+            position: relative;
+            width: 350px;
+            height: 50px;
+            margin: 50px;
+        }
+        .btn-container .btn a{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: rgba(255, 255, 255, .05);
+            box-shadow: 0 10px 15px rgba(152, 255, 152, .5);
+            border-top: 1px solid rgba(255, 255, 255, .1);
+            border-bottom: 1px solid rgba(255, 255, 255, .1);
+            border-radius: 2em;
+            color: #fff;
+            z-index: 1;
+            font-weight: 700;
+            letter-spacing: .2em;
+            text-decoration: none;
+            overflow: hidden;
+            transition: .5s;
+            backdrop-filter: blur(15px);
+        }
+        .btn-container .btn:hover a{
+            letter-spacing: .2em;
+        } 
+        .btn-container .btn a::before{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(to left, rgba(150,255,150,.5), transparent);
+            transform: skewX(45deg) translateX(0);
+            transition: .5s;
+        } 
+        .container .btn:hover a::before{
+            transform: skewX(45deg) translateX(175%);
+        }
+        .container .btn::before{
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: -1px;
+            width: 75px;
+            height: 10px;
+            background: #1fff71;
+            border-radius: 2em;
+            transition: .5s;
+        }
+        .container .btn:hover::before{
+            bottom: 0;
+            height: 50%;
+            width: 93%;
+            border-radius: 2em;
+            transition-delay: .5s;
+        }
+        .btn-container .btn::after{
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 1px;
+            width: 75px;
+            height: 10px;
+            background: #1fff71;
+            border-radius: 2em;
+            transition: .5s;
+        }
+        .btn-container .btn:hover::after{
+            top: 1px;
+            height: 50%;
+            width: 93%;
+            border-radius: 2em;
+            transition-delay: .5s;
         }
     </style>
 </head>
@@ -89,7 +177,7 @@
     <div class="container">
         <div class="header">
             <h2>My Completed Challenges</h2>
-            <p>These Are My Designs For The Challenges in Frontend Mentor</p>
+            <p>These Are My Designs For The HTML-CSS Challenges in Frontend Mentor</p>
         </div>
         <div class="content">    
             <ul class="inline-list">
@@ -112,7 +200,12 @@
                 <li><a href="fylo-landing-page.html"><h3>Seventeenth Challange</h3><img src="./img/frontend17.png" alt="Fylo Landing Page"></a></li>
                 <li><a href="hlp-with-curved-sections.html"><h3>Eighteenth Challange</h3><img src="./img/frontend18.png" alt="HLP with curves"></a></li>
             </ul>
-        </div>      
+        </div>
+        <div class="btn-container">
+            <div class="btn">
+                <a href="./front-chall2.html">See More</a>
+            </div>  
+        </div> 
     </div>
 </body>
 </html>

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Interactive rating component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    :root{
+      --Orange: hsl(25, 97%, 53%);
+      --White: hsl(0, 0%, 100%);
+      --Light-Grey: hsl(217, 12%, 63%);
+      --Medium-Grey: hsl(216, 12%, 54%);
+      --Dark-Blue: hsl(213, 19%, 18%);
+      --Very-Dark-Blue: hsl(216, 12%, 8%);
+    }
+    body{
+      font-size: 15px;
+      font-family: 'Overpass', sans-serif;
+      font-weight: 400;
+    }
+    .container{
+      background: var(--Very-Dark-Blue);
+      color: var(--White);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+    .card{
+      max-width: 350px;
+      padding: 25px;
+      background: var(--Dark-Blue);
+      border-radius: 20px;
+    }
+    .hdr-star img{
+      background: hsla(216, 12%, 8%, .5);
+      padding: 15px;
+      border: none;
+      border-radius: 50%;
+      margin-bottom: 25px;
+    }
+    .card-text p{
+      margin-top: 25px;
+      line-height: 1.5em;
+      color: var(--Light-Grey);
+    }
+    .ratings-btns{
+      display: flex;
+      justify-content: space-between;
+      margin: 25px 0px;
+    }
+    .ratings-btns button{
+      background: hsla(216, 12%, 8%, .5);
+      color: var(--Light-Grey);
+      padding: 15px 20px;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+    .ratings-btns button:hover{
+      background: var(--Light-Grey);
+      color: var(--White);
+    }
+    .ratings-btns button:active{
+      background: var(--Orange);
+      color: var(--White);
+    }
+    .submit-btn{
+      width: 100%;
+      background: var(--Orange);
+      color: var(--White);
+      border: none;
+      border-radius: 20px;
+      padding: 10px 45px;
+      letter-spacing: 2px;
+      font-variant: small-caps;
+      cursor: pointer;
+    }
+    .submit-btn:hover{
+      color: var(--Orange);
+      background: var(--White);
+    }
+    .submit-btn:active{
+      color: var(--White);
+      background: var(--Orange);
+    }
+    .hdr-ty-img{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+    .ty-card-text{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+    .rating-stat{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
+    }
+    .rating-stat p{
+      padding: 5px 15px;
+      background: hsla(216, 12%, 8%, .5);
+      border-radius: 15px;
+      margin: 10px 0px 20px 0px;
+      color: var(--Orange);
+    }
+    .ty-card-text h2{
+      margin-bottom: 20px;
+    }
+    .ty-card-text p{
+      padding: 0px 5px;
+      line-height: 1.5em;
+      color: var(--Light-Grey);
+    }
+    .hide{
+      display: none;
+    }
+    .attribution{ 
+      font-size: 11px; 
+      text-align: center; 
+    }
+    .attribution a{ 
+      color: hsl(228, 45%, 44%); 
+    }
+    @media(max-width: 450px){
+      .card{
+        margin: 20px;
+      }
+    }
+  </style>
+  
+</head>
+<body>
+  <main class="container">
+    <div class="card1 card">
+      <div class="rating-card">
+        <div class="hdr-star">
+          <img src="./img/icon-star.svg" alt="">
+        </div>
+        <div class="card-text">
+          <h2>How did we do?</h2>
+          <p>
+            Please let us know how we did with your support request. All feedback is appreciated 
+            to help us improve our offering!
+          </p>
+        </div>
+        <div class="ratings-btns">
+          <button>1</button>
+          <button>2</button>
+          <button>3</button>
+          <button>4</button>
+          <button>5</button>
+        </div>
+          <button class="submit-btn">Submit</button>
+      </div>
+    </div>
+    <div class="card2 card hide">
+      <div class="thank-you-card">
+        <div class="hdr-ty-img">
+          <img src="./img/illustration-thank-you.svg" alt="">
+        </div>
+          <div class="rating-stat">
+            <p>You selected <span>0</span> out of 5</p>
+          </div>
+        <div class="ty-card-text">
+          <h2>Thank you!</h2>
+          <p>
+            We appreciate you taking the time to give a rating. If you ever need more support, 
+            don’t hesitate to get in touch!
+          </p>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <p class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="https://jacram.github.io/">James Matthews</a>.
+    </p>
+  </footer>
+  <script>
+    let btns = document.querySelectorAll('.ratings-btns button')
+    let tyCard = document.querySelector('.card2')
+    let ratingCard = document.querySelector('.card')
+    let span = document.querySelector('span')
+
+Array.from(btns).forEach(btn =>{
+    btn.addEventListener('click' , e => {
+        const rating = e.target.textContent
+        span.textContent = rating
+        tyCard.classList.remove('hide')
+        ratingCard.classList.add('hide')
+    })
+})
+  </script>
+</body>
+</html>
