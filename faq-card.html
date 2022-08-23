@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="images/png" sizes="32x32" href="./img/favicon-32x32.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>Frontend Mentor | FAQ Accordion Card</title>
+  <script>
+    this.addEventListener("DOMContentLoaded", () =>{
+      const questions = document.querySelectorAll(".question")
+      questions.forEach((question) => question.addEventListener("click", () =>{
+    
+          if(question.parentNode.classList.contains("active")){
+              question.parentNode.classList.toggle("active")
+          } else {
+      questions.forEach(question => question.parentNode.classList.remove("active"))
+      question.parentNode.classList.add("active")
+          }
+      }))
+  }) 
+  </script>
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    :root{
+      /*#### Text*/
+      --Very-dark-desaturated-blue: hsl(238, 29%, 16%);
+      --Soft-red: hsl(14, 88%, 65%);
+      /*Background gradient:*/
+      --Soft-violet: hsl(273, 75%, 66%);
+      --Soft-blue: hsl(240, 73%, 65%);
+      /*#### Text*/
+      --Very-dark-grayish-blue: hsl(237, 12%, 33%);
+      --Dark-grayish-blue: hsl(240, 6%, 50%);
+      /*#### Dividers*/
+      --Light-grayish-blue: hsl(240, 5%, 91%);
+    }
+    body{
+      font-weight: 400;
+      font-size: 12px;
+      height: 100vh;
+      background: linear-gradient(to top, hsl(240, 73%, 65%), hsl(273, 75%, 66%));
+      background-repeat: no-repeat;
+    }
+    .container{
+      height: 98%;
+      font-family: 'Kumbh Sans', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+    .content{
+      background: #fff;
+      border-radius: 20px;
+      width: 950px;
+      height: 550px;
+      display: flex;
+    }
+    .main-img{ 
+      background-image: url(./img/bg-pattern-desktop.svg);
+      background-repeat: no-repeat;
+      background-position: -575px -270px ;
+      width: 50%;
+    }
+    .woman-img{
+      height: 459px;
+      background: url(./img/illustration-woman-online-desktop.svg);
+      background-repeat: no-repeat;
+      background-position: -75px 100px;
+    }
+    .box-img{
+      position: relative;
+      top: -225px;
+      left: -93px;
+    }
+    .hdr-title{
+      font-size: 2.5em;
+      margin-bottom: 25px;
+    }
+    .main-dropdown-text{
+      display: flex;
+      flex-direction: column;
+      margin-top: 75px;
+    }
+    .dropbox-context{
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    .question-answer-text{
+      width: 350px; 
+      padding-bottom: 15px;
+      border-bottom: 1px solid var(--Light-grayish-blue);
+    }
+    .question-answer-text > .answer {
+      display: none;
+    }
+    .question{
+      display: flex;
+      justify-content: space-between;
+      cursor: pointer;
+    }
+    .question img{
+      margin-top: 15px;
+      align-self: center;
+    }
+    .active img{
+      transform: rotate(540deg);
+      transition: all 0.5s ease-in;
+    }
+    .active > .answer {
+      display: block;
+      padding: 10px 0px 0px 0px;
+      color: var(--Dark-grayish-blue);
+    }
+    .question-title{
+      margin-top: 15px;
+      font-weight: 400;
+      color: var(--Very-dark-grayish-blue);
+    }
+    h3:hover{
+      color: var(--Soft-red);
+    }
+    .active h3{
+      font-weight: 700;
+    }
+    @media(max-width: 1000px){
+      body{
+        height: 100%;
+      }
+      .container{
+        margin: 75px 0px;
+        height: 98vh;
+        display: grid;
+        justify-content: center;
+        align-content: center;
+      }
+      .content{
+        height: 530px;
+        width: 340px;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 100px 1fr;
+        grid-gap: 0.5rem;
+        position: relative;
+        padding: 1rem;
+      }
+      .main-img{
+        width: 100%;
+        position: relative;
+        background: url("./img/bg-pattern-mobile.svg");
+        background-repeat: no-repeat;
+        background-position: 35px -15px;
+      }
+      .woman-img{
+        position: absolute;
+        width: 100%;
+        height: 200px;
+        background-size: 72%;
+        background-position: 35px;
+        top: -133px;
+      }
+      .box-img{
+        position: absolute;
+        width: 75px;
+        left: 25px;
+        top: -40px;
+      }
+      .hdr-title{
+        font-size: 3em;
+        text-align: center;
+      }
+      .main-dropdown-text{
+        width: 325px;
+        display: flex;
+        flex-direction: column;
+        margin-top: 0px;
+      }
+      .question-answer-text{
+        width: 95%
+      }
+      .question{
+        width: 100%;
+      }
+    }
+    .attribution{
+      background: var(--Light-grayish-blue); 
+      font-size: 11px; 
+      text-align: center; 
+    }
+    .attribution a{ 
+      color: hsl(228, 45%, 44%); 
+    }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <div class="content">
+      <div class="main-img">
+        <div class="woman-img"></div>
+          <img class="box-img" src="./img/illustration-box-desktop.svg" alt="">
+      </div>
+      <div class="main-dropdown-text">
+        <h1 class="hdr-title">FAQ</h1>
+        <div class="dropbox-context">
+          <div class="question-answer-text">
+            <div class="question">
+              <h3 class="question-title">
+                How many team members can I invite?
+              </h3>
+              <img src="./img/icon-arrow-down.svg" alt="down-arrow">
+            </div>
+            <div class="answer">
+              <p>
+                You can invite up to 2 additional users on the Free plan. There is no limit on 
+                team members for the Premium plan.
+              </p>
+            </div>
+          </div>
+          <div class="question-answer-text">
+            <div class="question">
+              <h3 class="question-title">
+                What is the maximum file upload size?
+              </h3>
+              <img src="./img/icon-arrow-down.svg" alt="down-arrow">
+            </div>
+            <div class="answer">
+              <p>
+                No more than 2GB. All files in your account must fit your allotted storage space.
+              </p>
+            </div>
+          </div>
+          <div class="question-answer-text">
+            <div class="question">
+              <h3 class="question-title">
+                How do I reset my password?
+              </h3>
+              <img src="./img/icon-arrow-down.svg" alt="down-arrow">
+            </div>
+            <div class="answer">
+              <p>
+                Click “Forgot password” from the login page or “Change password” from your profile page.
+                A reset link will be emailed to you.
+              </p>
+            </div>
+          </div>
+          <div class="question-answer-text">
+            <div class="question">
+              <h3 class="question-title">
+                Can I cancel my subscription?
+              </h3>
+              <img src="./img/icon-arrow-down.svg" alt="down-arrow">
+            </div>
+            <div class="answer">
+              <p>
+                Yes! Send us a message and we’ll process your request no questions asked.
+              </p>
+            </div>
+          </div>
+          <div class="question-answer-text">
+            <div class="question">
+              <h3 class="question-title">
+                Do you provide additional support?
+              </h3>
+              <img src="./img/icon-arrow-down.svg" alt="down-arrow">
+            </div>
+            <div class="answer">
+              <p>
+                Chat and email support is available 24/7. Phone lines are open during normal business hours.
+                How many team members can I invite?
+                You can invite up to 2 additional users on the Free plan. There is no limit on 
+                team members for the Premium plan.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="https://jacram.github.io/">James Matthews</a>.
+    </div>
+  </footer>
+</body>
+</html>
