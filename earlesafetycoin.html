@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Water+Brush&display=swap" rel="stylesheet">
     <title>Earle Safety Coin</title>
     <style>
         *{
@@ -13,7 +14,17 @@
         }
         .container{
             min-height: 100vh;
+            overflow: hidden;
             background: linear-gradient(rgba(20,150,20,.6), rgba(5,5,5,.8));
+        }
+        .brand a{
+            display: block;
+            font-family: "Water Brush";
+            font-size: 2.5em;
+            color: navy;
+            margin: 20px 0 0 20px;
+            text-decoration: none;
+            opacity: -1;
         }
         .coin{
             width: 300px;
@@ -23,7 +34,7 @@
             top: 50%;
             left: 50%;
             transform-style: preserve-3d;
-            animation: spin 20s linear infinite;
+            animation: spin 120s linear infinite;
         }
         .tails{
             position: absolute;
@@ -37,12 +48,14 @@
             /*background-blend-mode: overlay;*/
         }
         .middle{
+            /*background-color: #be9d66;
+            border-radius: 50%;*/
             background-image: url(./img/earlesafetyheads.png);
             background-size: 100% 100%;
             background-position: center;
             background-blend-mode: overlay;
-            width: 300px;
-            height: 300px;
+            width: 100%;
+            height: 100%;
             transform: translateZ(1px);
             position: absolute;
             top: 0;
@@ -85,6 +98,33 @@
         .middle:nth-child(9){
             transform: translateZ(9px);
         }
+        .middle:nth-child(10){
+            transform: translateZ(.5px);
+        }
+        .middle:nth-child(11){
+            transform: translateZ(1.5px);
+        }
+        .middle:nth-child(12){
+            transform: translateZ(2.5px);
+        }
+        .middle:nth-child(13){
+            transform: translateZ(3.5px);
+        }
+        .middle:nth-child(14){
+            transform: translateZ(4.5px);
+        }
+        .middle:nth-child(15){
+            transform: translateZ(5.5px);
+        }
+        .middle:nth-child(16){
+            transform: translateZ(6.5px);
+        }
+        .middle:nth-child(17){
+            transform: translateZ(7.5px);
+        }
+        .middle:nth-child(18){
+            transform: translateZ(8.5px);
+        }
         .middle{
             animation: spin-head 4s linear 0s infinite alternate;
         }
@@ -100,8 +140,20 @@
 </head>
 <body>
     <main class="container">
+        <div class="large-4 column">
+            <div class="brand"><a href="https://jacram.42web.io">James C. Matthews</a></div>
+        </div>
         <div class="coin">
             <span class="tails"></span>
+            <span class="middle"></span>
+            <span class="middle"></span>
+            <span class="middle"></span>
+            <span class="middle"></span>
+            <span class="middle"></span>
+            <span class="middle"></span>
+            <span class="middle"></span>
+            <span class="middle"></span>
+            <span class="middle"></span>
             <span class="middle"></span>
             <span class="middle"></span>
             <span class="middle"></span>
