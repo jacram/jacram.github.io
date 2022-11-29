@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="icon" type="img/png" sizes="32x32" href="./img/favicon-32x32.png">
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>Frontend Mentor | Ping coming soon page</title>
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    :root{
+      /*- Mobile: 375px- Desktop: 1440px
+        - font weights 300 600 700*/
+
+      /*## Colors*/
+
+      /*### Primary*/
+      --Blue: hsl(223, 87%, 63%);
+
+      /*### Secondary*/
+      --Pale-Blue: hsl(223, 100%, 88%);
+      --Light-Red: hsl(354, 100%, 66%);
+
+      /*### Neutral*/
+      --Gray: hsl(0, 0%, 59%);
+      --Very-Dark-Blue: hsl(209, 33%, 12%);
+    }
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Libre Franklin', sans-serif;
+      font-size: 20px;
+      font-weight: 300;
+    }
+    .container{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 98vh;
+    }
+    .content{
+      max-width: 1440px;
+    }
+    .logo{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 50px 0;
+    }
+    .context{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      margin-bottom: 20px;
+    }
+    .context h1{
+      color: var(--Gray);
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+    .context span{
+      font-weight: 700;
+      font-size: 2.5rem;
+      color: var(--Very-Dark-Blue);
+    }
+    .context p{
+      color: var(--Gray);
+      font-weight: 600;
+      margin-bottom: 9px;
+    }
+    form{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: row;
+    }
+    input{
+      width: 500px;
+      border-radius: 25px;
+      border: 1px solid var(--Pale-Blue);
+      padding: 10px;
+      margin-right: 24px;
+    }
+    input::placeholder{
+      font-size: .8rem;
+      color: var(--Pale-Blue);
+      padding-left: 12px;
+    }
+    form button{
+      font-size: .8em;
+      border: none;
+      font-weight: 600;
+      background: var(--Blue);
+      color: #fff;
+      padding: 12px 66px;
+      border-radius: 25px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, .2);
+      cursor: pointer;
+    }
+    form button:hover{
+      box-shadow: none;
+    }
+    .form-control{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      margin-bottom: 75px;
+  }
+  .form-control small{
+      color: var(--Light-Red);
+      font-weight: 600;
+      font-size: .6rem;
+      position: absolute;
+      bottom: -18px;
+      left: 25px;
+      text-align: left;
+      opacity: 0;
+  }
+  .form-control.error small{
+      opacity: 1;
+  }
+  .form-control.error input{
+      color: var(--Light-Red);
+      border-color: var(--Light-Red);
+      opacity: 1;
+  }
+  .form-control.error input::placeholder{
+      color: var(--Light-Red);
+  }
+    .contentImg{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .contentImg img{
+      width: 60%;
+    }
+    .socialMedia{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 75px;
+      margin-bottom: 20px;
+    }
+    #facebook{
+      color: var(--Blue);
+      border: 1px solid var(--Blue);
+      border-radius: 50%;
+      padding: 9px 12px;
+    }
+    #twitter{
+      color: var(--Blue);
+      border: 1px solid var(--Blue);
+      border-radius: 50%;
+      padding: 9px 9px;
+      margin: 0px 18px;
+    }
+    #instagram{
+      color: var(--Blue);
+      border: 1px solid var(--Blue);
+      border-radius: 50%;
+      padding: 9px 10px;
+    }
+    #facebook:hover{
+      color: #fff;
+      background: var(--Blue);
+    }
+    #twitter:hover{
+      color: #fff;
+      background: var(--Blue);
+    }
+    #instagram:hover{
+      color: #fff;
+      background: var(--Blue);
+    }
+    .copyright{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 30px;
+    }
+    .copyright p{
+      font-size: .9rem;
+      color: var(--Gray);
+    }
+    .attribution{ 
+      font-size: 11px; 
+      text-align: center; 
+    }
+    .attribution a{ 
+      font-size: 11px;
+      color: hsl(228, 45%, 44%); 
+    }
+    @media(max-width: 800px){
+      .logo{
+        margin: 60px 0 40px 0;
+      }
+      .context{
+        margin-bottom: 20px;
+      }
+      .context h1{
+        font-size: 1.3rem;
+      }
+      .context span{
+        font-size: 1.3rem;
+      }
+      .context p{
+        font-size: .75rem;
+        margin-top: 6px;
+      }
+      form{
+        flex-direction: column;
+      }
+      input{
+        width: 300px;
+        margin-right: 0px;
+      }
+      form button{
+        margin-top: 10px;
+        width: 300px;
+        padding: 12px 66px;
+      }
+      .form-control{
+        display: flex;
+        flex-direction: column;
+        position: relative;
+      }
+      .form-control.error{
+        margin-bottom: 20px;
+      }
+      .form-control small{
+        position: relative;
+        bottom: 0;
+        left: 0;
+        text-align: center;
+      }
+      .form-control.error small{
+        margin-top: 6px;
+        margin-bottom: 18px;
+      }
+      .form-control.error .form-btn{
+        margin-top: 0px;
+        margin-bottom: 20px;
+      }/**/
+      .contentImg img{
+        width: 80%;
+      }
+      .socialMedia{
+        margin-top: 100px;
+        margin-bottom: 30px;
+      }
+      .copyright p{
+        font-size: .6rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <div class="content">
+      <div class="logo">
+        <img src="./img/pingLogo.svg" alt="Ping Logo">
+      </div>
+      <div class="context">
+          <h1>We are launching <span>soon!</span></h1>
+          <p>Subscribe and get notified</p>
+      </div>
+      <form id="form">
+        <div class="form-control">
+          <input id="email" type="email" placeholder="Your email address...">
+          <small></small>
+          <div class="form-btn">
+            <button type="submit" onclick="placeholder()" >Notify Me</button>
+          </div>
+        </div>
+      </form>
+      <div class="contentImg">
+        <img src="./img/illustration-dashboard.png" alt="">
+      </div>
+      <div class="socialMedia">
+        <a href=""><i id="facebook" class="fab fa-facebook-f"></i></a>
+        <a href=""><i id="twitter" class="fab fa-twitter"></i></a>
+        <a href=""><i id="instagram" class="fab fa-instagram"></i></a>
+      </div>
+      <div class="copyright">
+        <p>&copy; Copyright Ping. All rights reserved.</p>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <p class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="https://jacram.github.io/">James Matthews</a>.
+    </p>
+  </footer>
+  <script>
+    function placeholder(){
+      document.getElementById('email').placeholder = "example@email.com";
+    }
+  </script>
+  <script>
+    let form = document.getElementById('form');
+
+    form.addEventListener('submit', e =>{
+        e.preventDefault();
+        let email = form['email'].value;
+
+        if(email === ''){
+          addError('email','Please provide a valid email address');
+      }else if(!isValid(email)){
+          addError('email','Please provide a valid email address');
+      }else{
+          removeError('email');
+      }
+    })
+
+    function addError(field, message){
+      let formControl = form[field].parentNode;
+      formControl.classList.add('error');
+      let small = form[field].parentNode.querySelector('small');
+      small.innerText = message;
+  }
+  function removeError(field){
+      let formControl = form[field].parentNode;
+      formControl.classList.remove('error');
+  }
+  function isValid(email){
+      const validEmail = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      return validEmail.test(String(email).toLowerCase());
+  }
+
+  </script>
+  
+</body>
+</html>
