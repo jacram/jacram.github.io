@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;800&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="./img/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Notifications page</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    :root{
+      /*## Colors*/
+
+      /*### Primary*/
+      --Red: hsl(1, 90%, 64%);
+      --Blue: hsl(219, 85%, 26%);
+
+      /*### Neutral*/
+      --White: hsl(0, 0%, 100%);
+      --Very-light-grayish-blue: hsl(210, 60%, 98%);
+      --Light-grayish-blue-1: hsl(211, 68%, 94%);
+      --Light-grayish-blue-2: hsl(205, 33%, 90%);
+      --Grayish-blue: hsl(219, 14%, 63%);
+      --Dark-grayish-blue: hsl(219, 12%, 42%);
+      --Very-dark-blue: hsl(224, 21%, 14%);
+    }
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 16px;
+      font-weight: 500;
+    }
+    .container{
+      background: var(--Very-light-grayish-blue);
+      min-height: 98vh;
+    }
+    .content{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .content-card{
+      max-width: 700px;
+      margin: 50px 10%;
+      padding: 24px;
+      border-radius: 12px;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, .3);
+      background: var(--White);
+    }
+    .content-card .cardHdr{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+    }
+    .content-card .cardHdr h3{
+      color: var(--Very-dark-blue);
+      font-weight: 800;
+      font-size: 1.3rem;
+    }
+    .content-card .cardHdr span{
+      position: relative;
+      bottom: 3px;
+      font-size: .8rem;
+      padding: 3px 9px;
+      border-radius: 6px;
+      margin-left: 6px;
+      background: var(--Blue);
+      color: var(--White);
+    }
+    .content-card .cardHdr p{
+      font-size: .9rem;
+      color: var(--Very-dark-blue);
+      cursor: pointer;
+    }
+    .content-card .profile{
+      display: flex;
+      align-items: center;
+      padding: 9px;
+      margin-bottom: 9px;
+      border-radius: 9px;
+    }
+    .active{
+      background-color: var(--Very-light-grayish-blue);
+    }
+    .active p:first-of-type::after{
+      content: " ";
+      background-color: var(--Red);
+      width: 9px;
+      height: 9px;
+      margin-left: 9px;
+      display: inline-block;
+      border-radius: 50%;
+    }
+    .content-card .profileImg img{
+      width: 42px;
+      height: 42px;
+      margin-right: 18px;
+    }
+    .content-card .profile .profileInfo{
+      width: 100%;
+      position: relative;
+      display: flex;
+    }
+    .content-card .profile .profileInfo b{
+      font-weight: 800;
+    }
+    .content-card .profile .profileInfo p{
+      color: var(--Grayish-blue);
+    }
+    .content-card .profile .profileInfo span{
+      font-weight: 800;
+      color: var(--Very-dark-blue);
+      cursor: pointer;
+    }
+    .content-card .profile .profileContext small{
+      font-size: .9rem;
+      color: var(--Grayish-blue);
+    }
+    .content-card .message{
+      color: var(--Grayish-blue);
+      padding: 15px 20px;
+      margin:0px 54px 9px 69px;
+      border-radius: 6px;
+      border: 1px solid var(--Light-grayish-blue-1);
+      cursor: pointer;
+    }
+    .content-card .message:hover{
+      background: var(--Light-grayish-blue-1);
+    }
+    .content-card .message p{
+      font-size: .9rem;
+    }
+    .picMessage{
+      display: flex;
+      margin-left: auto;
+      width: 42px;
+      height: 42px;
+      cursor: pointer;
+    }
+    .content-card .profile .picMessage img{
+      max-width: 100%;
+    }
+    @media(max-width: 500px){
+      .content-card{
+        margin: 0;
+        padding: 18px;
+      }
+      .content-card .cardHdr h3{
+        font-size: 1.1rem;
+      }
+      .content-card .cardHdr span{
+        font-size: .6rem;
+      }
+      .content-card .cardHdr p{
+        font-size: .8rem;
+      }
+      .active{
+        background-color: var(--Very-light-grayish-blue);
+      }
+      .active p:first-of-type::after{
+        width: 6px;
+        height: 6px;
+      }
+      .content-card .profileImg img{
+        width: 36px;
+        height: 36px;
+      }
+      .content-card .profile .profileInfo b{
+        font-size: .9rem;
+      }
+      .content-card .profile .profileInfo p{
+        font-size: .9rem;
+      }
+      .content-card .profile .profileInfo span{
+        font-size: .9rem;
+      }
+      .content-card .profile .profileContext small{
+        font-size: .8rem;
+      }
+      .content-card .message{
+        color: var(--Grayish-blue);
+        padding: 12px 6px 12px 12px;
+        margin:0px 50px 9px 60px;
+      }
+      .picMessage{
+        display: flex;
+        margin-left: auto;
+        min-width: 54px;
+        height: 46px;
+      }
+    }
+    .attribution{ 
+      font-size: 9px; 
+      text-align: center; 
+    }
+    .attribution a{ 
+      font-size: 9px;
+      font-weight: 800;
+      color: hsl(228, 45%, 54%); 
+    }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <div class="content">
+      <div class="content-card">
+        <div class="cardHdr">
+          <h3>Notifications <span id="notification"></span></h3>
+          <p id="markAll" href="">Mark all as read</p>
+        </div>
+        <div class="profile active">
+          <div class="profileImg">
+            <img src="./assets/img/avatar-mark-webber.webp" alt="">
+          </div>
+          <div class="profileContext">
+            <div class="profileInfo">
+              <p><span>Mark Webber</span> reacted to your recent post <b>My first tournament today!</b></p>
+            </div>
+            <small>1m ago</small>
+          </div>
+        </div>
+        <div class="profile active">
+          <div class="profileImg">
+            <img src="./assets/img/avatar-angela-gray.webp" alt="">
+          </div>
+          <div class="profileContext">
+            <div class="profileInfo">
+              <p><span>Angela Gray</span> followed you</p>
+            </div>
+            <small>5m ago</small>
+          </div>
+        </div>
+        <div class="profile active">
+          <div class="profileImg">
+            <img src="./assets/img/avatar-jacob-thompson.webp" alt="">
+          </div>
+          <div class="profileContext">
+            <div class="profileInfo">
+              <p><span>Jacob Thompson </span>has joined your group <span>Chess Club</span></p>
+            </div>
+            <small>1 day ago</small>
+          </div>
+        </div>
+        <div class="profile">
+          <div class="profileImg">
+            <img src="./assets/img/avatar-rizky-hasanuddin.webp" alt="">
+          </div>
+          <div class="profileContext">
+            <div class="profileInfo">
+              <p><span>Rizky Hasanuddin </span>sent you a private message</p>
+            </div>
+            <small>5 days ago</small>
+          </div>
+        </div>
+        <div class="message">
+          <p>
+            Hello, thanks for setting up the Chess Club. I've been a member for a few weeks now and 
+            I'm already having lots of fun and improving my game.
+          </p>
+        </div>
+        <div class="profile">
+          <div class="profileImg">
+            <img src="./assets/img/avatar-kimberly-smith.webp" alt="">
+          </div>
+          <div class="profileContext">
+            <div class="profileInfo">
+              <p><span>Kimberly Smith </span> commented on your picture </p>
+            </div>
+            <small>1 week ago</small>
+          </div>
+          <div class="picMessage"> 
+            <img src="./assets/img/image-chess.webp" alt="">
+          </div>
+        </div>
+        <div class="profile">
+          <div class="profileImg">
+            <img src="./assets/img/avatar-nathan-peterson.webp" alt="">
+          </div>
+          <div class="profileContext">
+            <div class="profileInfo">
+              <p><span>Nathan Peterson </span>reacted to your recent post <b>5 end-game strategies to increase your win rate</b></p>
+            </div>
+            <small>2 weeks ago</small>
+          </div>
+        </div>
+        <div class="profile">
+          <div class="profileImg">
+            <img src="./assets/img/avatar-anna-kim.webp" alt="">
+          </div>
+          <div class="profileContext">
+            <div class="profileInfo">
+              <p><span>Anna Kim</span> left the group <span>Chess Club</span></p>
+            </div>
+            <small>2 weeks ago</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="https://jacram.github.io/">James Matthews</a>.
+  </div>
+  <script>
+    let unreadMessages = document.querySelectorAll('.active');
+    let unread = document.getElementById('notification');
+    let markAll = document.getElementById('markAll');
+    unread.innerText = unreadMessages.length
+
+    unreadMessages.forEach((message) => {
+      message.addEventListener("click", () => {
+          message.classList.remove("active");
+          const newUnreadMessages = document.querySelectorAll(".active");
+          unread.innerText = newUnreadMessages.length;
+      })
+  })
+    markAll.addEventListener("click", () => {
+      unreadMessages.forEach(message => message.classList.remove("active"))
+      const newUnreadMessages = document.querySelectorAll(".active");
+      unread.innerText = newUnreadMessages.length;
+  })
+  </script>
+</body>
+</html>
